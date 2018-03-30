@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="triangle" class="com.anu.tqa.initiliazingcollection.Triangle">
+	<property name="points">
+		<list>
+			<ref bean="pint0"/>
+			<ref bean="pint1"/>
+			<ref bean="pint2"/>
+		</list>
+	</property>
+</bean>
+
+<bean id="pint0" class="com.anu.tqa.initiliazingcollection.Point">
+	<property name="pointX" value="0"/>
+	<property name="pointY" value="0"/>
+</bean>
+
+<bean id="pint1" class="com.anu.tqa.initiliazingcollection.Point">
+	<property name="pointX" value="0"/>
+	<property name="pointY" value="20"/>
+</bean>
+
+<bean id="pint2" class="com.anu.tqa.initiliazingcollection.Point">
+	<property name="pointX" value="20"/>
+	<property name="pointY" value="0"/>
+</bean>
+</beans>
