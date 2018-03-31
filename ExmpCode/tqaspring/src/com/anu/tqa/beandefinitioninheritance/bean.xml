@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="parentTriangle" class="com.anu.tqa.beandefinitioninheritance.Triangle">
+	<property name="pointA" ref="pointA"/>
+</bean>
+
+<bean id="triangle1" class="com.anu.tqa.beandefinitioninheritance.Triangle" parent="parentTriangle">
+	<property name="pointB" ref="pointB"/>
+	<property name="pointC" ref="pointC"/>
+</bean>
+
+<bean id="triangle2" class="com.anu.tqa.beandefinitioninheritance.Triangle" parent="parentTriangle">
+	<property name="pointC" ref="pointC"/>
+</bean>
+
+<bean id="pointA" class="com.anu.tqa.beandefinitioninheritance.Point">
+	<property name="pointX" value="0"/>
+	<property name="pointY" value="0"/>
+</bean>
+
+<bean id="pointB" class="com.anu.tqa.beandefinitioninheritance.Point">
+	<property name="pointX" value="0"/>
+	<property name="pointY" value="20"/>
+</bean>
+
+<bean id="pointC" class="com.anu.tqa.beandefinitioninheritance.Point">
+	<property name="pointX" value="20"/>
+	<property name="pointY" value="0"/>
+</bean>
+</beans>

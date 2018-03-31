@@ -3,22 +3,27 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="triangle" class="com.anu.tqa.autowiring.Triangle" autowire="byName">
-	
+<bean id="triangle" class="com.anu.tqa.beanpostprocessors.Triangle">
+	<property name="pointA" ref="pint0"/>
+	<property name="pointB" ref="pint1"/>
+	<property name="pointC" ref="pint2"/>
 </bean>
 
-<bean id="pointA" class="com.anu.tqa.autowiring.Point">
+<bean id="pint0" class="com.anu.tqa.beanpostprocessors.Point">
 	<property name="pointX" value="0"/>
 	<property name="pointY" value="0"/>
 </bean>
 
-<bean id="pointB" class="com.anu.tqa.autowiring.Point">
+<bean id="pint1" class="com.anu.tqa.beanpostprocessors.Point">
 	<property name="pointX" value="0"/>
 	<property name="pointY" value="20"/>
 </bean>
 
-<bean id="pointC" class="com.anu.tqa.autowiring.Point">
+<bean id="pint2" class="com.anu.tqa.beanpostprocessors.Point">
 	<property name="pointX" value="20"/>
 	<property name="pointY" value="0"/>
 </bean>
+
+<!-- registering bean post processor class here -->
+<bean class="com.anu.tqa.beanpostprocessors.DisplayNameBeanPostProcessor"/>
 </beans>
