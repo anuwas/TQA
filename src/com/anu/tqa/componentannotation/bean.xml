@@ -7,28 +7,28 @@
 
  
 
-<!-- <bean id="triangle" class="com.anu.tqa.stereotypeannotations.Triangle">
+<!-- <bean id="triangle" class="com.anu.tqa.componentannotation.Triangle">
 	<property name="pointA" ref="pint0"/>
 	<property name="pointB" ref="pint1"/>
 	<property name="pointC" ref="pint2"/>
 </bean> -->
 
- <bean id="pint0" class="com.anu.tqa.stereotypeannotations.Point">
+ <bean id="pint0" class="com.anu.tqa.componentannotation.Point">
 	<property name="pointX" value="0"/>
 	<property name="pointY" value="0"/>
 </bean>
 
- <bean id="pint1" class="com.anu.tqa.stereotypeannotations.Point">
+ <bean id="pint1" class="com.anu.tqa.componentannotation.Point">
 	<property name="pointX" value="0"/>
 	<property name="pointY" value="20"/>
 </bean> 
 
-<bean id="center" class="com.anu.tqa.stereotypeannotations.Point">
+<bean id="center" class="com.anu.tqa.componentannotation.Point">
 	<property name="pointX" value="20"/>
 	<property name="pointY" value="0"/>
 </bean> 
 
 
 <context:annotation-config/>
-<context:component-scan base-package="com.anu.tqa.stereotypeannotations"/>
+<context:component-scan base-package="com.anu.tqa.componentannotation"/>
 </beans>
