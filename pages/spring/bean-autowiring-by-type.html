@@ -1,0 +1,60 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        SPRING
+        <small>Autowiring by type</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/java7bineryleteralwithprefix">SPRING</a></li>
+        <li class="active">Autowiring by type</li>
+      </ol>
+    </section>
+        <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Autowiring by type</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                    title="Collapse">
+              <i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          
+          
+<h3 style="margin-left:0cm; margin-right:0cm"><span style="font-size:14pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">Autowire by type</span></span></span></h3>
+
+<div style="border:none black 1.0pt; padding:0cm 0cm 0cm 0cm">
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;triangle&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.autowiring.Triangle&quot;</span></em> <span style="color:#7f007f">autowire</span>=<em><span style="color:#2a00ff">&quot;byType&quot;</span></em><span style="color:teal">&gt;</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;/</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&gt;</span></span></span></span></span></span></p>
+</div>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">Another way of autowiring is &ldquo;byTpe&rdquo; , and it works only when there is only one member variable and only one bean of each type. It checks the class with the member variable class and ignore the name. </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">For this particular case autowiring will not work, because there are three point variable. So spring cannot assume what would be the type, as we know that we should have only one member variable required for autowiring by type.</span></span></span></p>
+
+
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->

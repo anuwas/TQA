@@ -2,12 +2,12 @@
     <section class="content-header">
       <h1>
         SPRING
-        <small>Coding to Interface</small>
+        <small>Callback Use Global</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#/java7bineryleteralwithprefix">SPRING</a></li>
-        <li class="active">Coding to Interface</li>
+        <li class="active">Callback Use Global</li>
       </ol>
     </section>
         <!-- Main content -->
@@ -16,7 +16,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Coding to Interface</h3>
+          <h3 class="box-title">Callback Use Global</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -28,25 +28,12 @@
         </div>
         <div class="box-body">
           
-          <p><span style="font-size:14pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645944"> Coding to Interface</a></span></span></span></p>
+          
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:14pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><a name="_Toc510645933">Callback Use Globally</a></span></span></span></h2>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">It is better to call an interface rather than calling a bean class directly. Implementing interface is quite flexible than directly calling a bean class.</span></span></span></p>
+<h3 style="margin-left:0cm; margin-right:0cm"><span style="font-size:14pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><a name="_Toc510645933">Triangle.java</a></span></span></span></h3>
 
-<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645945">Interface Shape.java</a></span></span></span></h2>
-
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">public</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> <strong><span style="color:#7f0055">interface</span></strong> Shape {</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> draw();</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">}</span></span></span></span></span></p>
-
-<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645946">Triangle.java</a></span></span></span></h2>
-
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">public</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> <strong><span style="color:#7f0055">class</span></strong> Triangle <strong><span style="color:#7f0055">implements</span></strong> <span style="background-color:aqua">Shape</span>{</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">public</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> <strong><span style="color:#7f0055">class</span></strong> Triangle <strong><span style="color:#7f0055">implements</span></strong> {</span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
 
@@ -106,13 +93,9 @@
 
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="background-color:aqua"><span style="color:#646464">@Override</span></span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> draw() {</span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="background-color:aqua"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> draw()</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> {</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#2a00ff">&quot;Drawing Triangle &quot;</span>);</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#2a00ff">&quot;Triangle Draw,&quot;</span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#2a00ff">&quot;Triangle Draw ,&quot;</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + <span style="color:#2a00ff">&quot; Point A &quot;</span>+getPointA().getPointX()+<span style="color:#2a00ff">&quot;,&quot;</span>+getPointA().getPointY()</span></span></span></span></span></p>
 
@@ -122,71 +105,31 @@
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">}</span></span></span></span></span></p>
-
-<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645947">Circle.java</a></span></span></span></h2>
-
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">public</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> <strong><span style="color:#7f0055">class</span></strong> Circle <strong><span style="color:#7f0055">implements</span></strong> <span style="background-color:aqua">Shape</span>{</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">private</span></strong> Point <span style="color:#0000c0">center</span>;</span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> Point getPoint() {</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <span style="color:#0000c0">center</span>;</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="background-color:aqua"><span style="color:#7f0055">public</span></span></strong><span style="background-color:aqua"> <strong><span style="color:#7f0055">void</span></strong> myInit() {</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="background-color:aqua"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#2a00ff">&quot;Bean Initializing ..Init method called for Triangle&quot;</span>);</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="background-color:aqua"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> setPoint(Point <span style="color:#6a3e3e">center</span>) {</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">center</span> = <span style="color:#6a3e3e">center</span>;</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="background-color:aqua"><span style="color:#7f0055">public</span></span></strong><span style="background-color:aqua"> <strong><span style="color:#7f0055">void</span></strong> myDestory() {</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="background-color:aqua"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#2a00ff">&quot;Destroy method called for Triangle&quot;</span>);</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="background-color:aqua"><span style="color:#646464">@Override</span></span></span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="background-color:aqua"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> draw()</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> {</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#2a00ff">&quot;Drawing Circle &quot;</span>);</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#2a00ff">&quot;Center of the cirecle is X &quot;</span>+<span style="color:#0000c0">center</span>.getPointX()+<span style="color:#2a00ff">&quot;, Y &quot;</span>+<span style="color:#0000c0">center</span>.getPointY());</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="background-color:aqua"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">}</span></span></span></span></span></p>
 
-<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645948">MainClass.java</a></span></span></span></h2>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">public</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> <strong><span style="color:#7f0055">class</span></strong> MainClass {</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">static</span></strong> <strong><span style="color:#7f0055">void</span></strong> main(String[] <span style="color:#6a3e3e">args</span>) {</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ApplicationContext <span style="color:#6a3e3e">context</span> = <strong><span style="color:#7f0055">new</span></strong> ClassPathXmlApplicationContext(<span style="color:#2a00ff">&quot;bean.xml&quot;</span>);</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shape <span style="color:#6a3e3e">shape</span> = (Shape) <span style="color:#6a3e3e">context</span>.getBean(<span style="color:#2a00ff">&quot;circle&quot;</span>);</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#6a3e3e">shape</span>.draw();</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">}</span></span></span></span></span></p>
-
-<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645949">bean.xml</a></span></span></span></h2>
+<h3 style="margin-left:0cm; margin-right:0cm"><span style="font-size:14pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><a name="_Toc510645934">bean.xml</a></span></span></span></h3>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;?</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">xml</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">version</span>=<em><span style="color:#2a00ff">&quot;1.0&quot;</span></em> <span style="color:#7f007f">encoding</span>=<em><span style="color:#2a00ff">&quot;UTF-8&quot;</span></em><span style="color:teal">?&gt;</span></span></span></span></span></span></p>
 
@@ -198,7 +141,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;triangle&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.implementinginterface.Triangle&quot;</span></em><span style="color:teal">&gt;</span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;triangle&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.lifecyclecallbacks.Triangle&quot;</span></em> <span style="background-color:aqua"><span style="color:#7f007f">init-method</span></span><span style="background-color:aqua">=<em><span style="color:#2a00ff">&quot;myInit&quot;</span></em></span> <span style="background-color:aqua"><span style="color:#7f007f">destroy-method</span></span><span style="background-color:aqua">=<em><span style="color:#2a00ff">&quot;myDestory&quot;</span></em></span><span style="color:teal">&gt;</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:teal">&lt;</span><span style="color:#3f7f7f">property</span> <span style="color:#7f007f">name</span>=<em><span style="color:#2a00ff">&quot;pointA&quot;</span></em> <span style="color:#7f007f">ref</span>=<em><span style="color:#2a00ff">&quot;pint0&quot;</span></em><span style="color:teal">/&gt;</span></span></span></span></span></span></p>
 
@@ -210,7 +153,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;pint0&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.implementinginterface.Point&quot;</span></em><span style="color:teal">&gt;</span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;pint0&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.lifecyclecallbacks.Point&quot;</span></em><span style="color:teal">&gt;</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:teal">&lt;</span><span style="color:#3f7f7f">property</span> <span style="color:#7f007f">name</span>=<em><span style="color:#2a00ff">&quot;pointX&quot;</span></em> <span style="color:#7f007f">value</span>=<em><span style="color:#2a00ff">&quot;0&quot;</span></em><span style="color:teal">/&gt;</span></span></span></span></span></span></p>
 
@@ -220,7 +163,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;pint1&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.implementinginterface.Point&quot;</span></em><span style="color:teal">&gt;</span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;pint1&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.lifecyclecallbacks.Point&quot;</span></em><span style="color:teal">&gt;</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:teal">&lt;</span><span style="color:#3f7f7f">property</span> <span style="color:#7f007f">name</span>=<em><span style="color:#2a00ff">&quot;pointX&quot;</span></em> <span style="color:#7f007f">value</span>=<em><span style="color:#2a00ff">&quot;0&quot;</span></em><span style="color:teal">/&gt;</span></span></span></span></span></span></p>
 
@@ -230,7 +173,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;pint2&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.implementinginterface.Point&quot;</span></em><span style="color:teal">&gt;</span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;pint2&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.lifecyclecallbacks.Point&quot;</span></em><span style="color:teal">&gt;</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:teal">&lt;</span><span style="color:#3f7f7f">property</span> <span style="color:#7f007f">name</span>=<em><span style="color:#2a00ff">&quot;pointX&quot;</span></em> <span style="color:#7f007f">value</span>=<em><span style="color:#2a00ff">&quot;20&quot;</span></em><span style="color:teal">/&gt;</span></span></span></span></span></span></p>
 
@@ -238,19 +181,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;/</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&gt;</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">id</span>=<em><span style="color:#2a00ff">&quot;circle&quot;</span></em> <span style="color:#7f007f">class</span>=<em><span style="color:#2a00ff">&quot;com.anu.tqa.implementinginterface.Circle&quot;</span></em><span style="color:teal">&gt;</span></span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:teal">&lt;</span><span style="color:#3f7f7f">property</span> <span style="color:#7f007f">name</span>=<em><span style="color:#2a00ff">&quot;point&quot;</span></em> <span style="color:#7f007f">ref</span>=<em><span style="color:#2a00ff">&quot;pint0&quot;</span></em><span style="color:teal">/&gt;</span></span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;/</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&gt;</span></span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
-
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;/</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">beans</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&gt;</span></span></span></span></span></span></p>
-
-
 
 
 

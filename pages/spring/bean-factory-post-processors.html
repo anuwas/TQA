@@ -1,13 +1,13 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        JAVA 1.7
-        <small>Binary Literals with prefix "0b"</small>
+        SPRING
+        <small>BeanFactory PostProcessors</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#/java7bineryleteralwithprefix">JAVA7</a></li>
-        <li class="active">Binary Literals with prefix "0b"</li>
+        <li><a href="#/java7bineryleteralwithprefix">SPRING</a></li>
+        <li class="active">BeanFactory PostProcessors</li>
       </ol>
     </section>
         <!-- Main content -->
@@ -16,7 +16,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Binary Literals with prefix "0b"</h3>
+          <h3 class="box-title">BeanFactory PostProcessors</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -29,13 +29,11 @@
         <div class="box-body">
           
           
-<ol>
-  <li><span style="font-size:14pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645938"> Bean Factory Post Processors</a></span></span></span></li>
-</ol>
+<p><span style="font-size:14pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645938"> Bean Factory Post Processors</a></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">One of the extensions of spring is bean factory post processors. We can write our own bean factory post processor. Bean factory provides the entire bean. To implement bean factory post processor need to write a separate class.</span></span></span></p>
 
-<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645939">19.1 MyBeanFactoryPostProcessor.java</a></span></span></span></h2>
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645939">MyBeanFactoryPostProcessor.java</a></span></span></span></h2>
 
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
 
@@ -53,7 +51,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">}</span></span></span></span></span></p>
 
-<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645940">19.2 bean.xml</a></span></span></span></h2>
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc510645940">bean.xml</a></span></span></span></h2>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;?</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">xml</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">version</span>=<em><span style="color:#2a00ff">&quot;1.0&quot;</span></em> <span style="color:#7f007f">encoding</span>=<em><span style="color:#2a00ff">&quot;UTF-8&quot;</span></em><span style="color:teal">?&gt;</span></span></span></span></span></span></p>
 
@@ -119,11 +117,11 @@
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">We can override the default functionality of bean factory post processor. One of the example of BeanFactoryPostProcessor is <strong>PropertyPlaceHolderConfigurer . </strong>Like in beans.xml file different values are abliable. No I want to read those values from a property file.</span></span></span></p>
 
-<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black">&nbsp;<a name="_Toc510645941">19.3 PropertyPlaceHolderConfigurer</a></span></span></span></h2>
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black">&nbsp;<a name="_Toc510645941">PropertyPlaceHolderConfigurer</a></span></span></span></h2>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">One of the examples of BeanFactoryPostProcess is PropertyPlaceHolderConfigurer. Now we are going to put some placeholder in bean.xml file instead of value. And we will put those value in a property file. And PropertyPlaceHolderConfigurer will read those values from property file and put those values in the placeholder which is declared in bean.xml file.</span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">One of the examples of BeanFactoryPostProcess is PropertyPlaceHolderConfigurer. Now we are going to put some placeholder in bean.xml file instead of value. And we will put those values in a property file. And PropertyPlaceHolderConfigurer will read those values from property file and put those values in the placeholder which is declared in bean.xml file.</span></span></span></p>
 
-<h3 style="margin-left:0cm; margin-right:0cm"><span style="font-size:14pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><a name="_Toc510645942">19.3.1 pointconfig.properties</a></span></span></span></h3>
+<h3 style="margin-left:0cm; margin-right:0cm"><span style="font-size:14pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><a name="_Toc510645942">pointconfig.properties</a></span></span></span></h3>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">pointA.pointX=<span style="color:#2a00ff">0</span></span></span></span></span></span></p>
 
@@ -133,7 +131,7 @@
 
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
 
-<h3 style="margin-left:0cm; margin-right:0cm"><span style="font-size:14pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><a name="_Toc510645943"></a><a name="_z337ya"></a>19.3.2 bean.xml</span></span></span></h3>
+<h3 style="margin-left:0cm; margin-right:0cm"><span style="font-size:14pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><a name="_Toc510645942">bean.xml</a></span></span></span></h3>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;?</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">xml</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"> <span style="color:#7f007f">version</span>=<em><span style="color:#2a00ff">&quot;1.0&quot;</span></em> <span style="color:#7f007f">encoding</span>=<em><span style="color:#2a00ff">&quot;UTF-8&quot;</span></em><span style="color:teal">?&gt;</span></span></span></span></span></span></p>
 
@@ -202,6 +200,7 @@
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;/</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">bean</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&gt;</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&lt;/</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#3f7f7f">beans</span></span></span><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:teal">&gt;</span></span></span></span></span></span></p>
+
 
 
 

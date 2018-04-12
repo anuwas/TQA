@@ -66,8 +66,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/sp-bean-initiliaze-collection', {
 			templateUrl: 'pages/spring/initializing-collection.html',
 		})
-		.when('/sp-bean-autowiring', {
-			templateUrl: 'pages/spring/bean-autowiring.html',
+		.when('/sp-bean-autowiring-by-name', {
+			templateUrl: 'pages/spring/bean-autowiring-by-name.html',
+		})
+		.when('/sp-bean-autowiring-bytype', {
+			templateUrl: 'pages/spring/bean-autowiring-by-type.html',
+		})
+		.when('/sp-bean-autowiring-by-constructor', {
+			templateUrl: 'pages/spring/bean-autowiring-by-constructor.html',
 		})
 		.when('/sp-get-bean', {
 			templateUrl: 'pages/spring/get-bean.html',
@@ -83,6 +89,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		})
 		.when('/sp-bean-lifecycle-callbacks', {
 			templateUrl: 'pages/spring/bean-lifecycle-callbacks.html',
+		})
+		.when('/sp-abstract-application-context', {
+			templateUrl: 'pages/spring/abstract-application-context.html',
+		})
+		.when('/sp-callback-use-globally', {
+			templateUrl: 'pages/spring/callback-use-globally.html',
 		})
 		.when('/sp-bean-post-processors', {
 			templateUrl: 'pages/spring/bean-post-processors.html',
@@ -108,14 +120,29 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/sp-annotation-config', {
 			templateUrl: 'pages/spring/annotation-config.html',
 		})
+		.when('/sp-jsr250-annotations', {
+			templateUrl: 'pages/spring/jsr-250-annotation.html',
+		})
 		.when('/sp-annotation-resource', {
 			templateUrl: 'pages/spring/annotation-resource.html',
+		})
+		.when('/sp-init-and-destroy', {
+			templateUrl: 'pages/spring/init-and-destroy.html',
 		})
 		.when('/sp-annotation-component', {
 			templateUrl: 'pages/spring/annotation-component.html',
 		})
 		.when('/sp-stereotype-annotations', {
 			templateUrl: 'pages/spring/stereotype-annotations.html',
+		})
+		.when('/sp-annotation-service', {
+			templateUrl: 'pages/spring/annotation-service.html',
+		})
+		.when('/sp-annotation-repository', {
+			templateUrl: 'pages/spring/annotation-repository.html',
+		})
+		.when('/sp-annotation-controller', {
+			templateUrl: 'pages/spring/annotation-controller.html',
 		})
 		.when('/sp-resource-properties', {
 			templateUrl: 'pages/spring/reading-resource-propertiesfile.html',
