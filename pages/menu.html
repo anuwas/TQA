@@ -101,7 +101,18 @@
               </ul>
           </li>
           <li><a href="#/sp-bean-initiliaze-collection"><i class="fa fa-circle-o text-red"></i>Collection</a></li>
-          <li><a href="#/sp-bean-autowiring"><i class="fa fa-circle-o text-red"></i>Autowiring</a></li>
+          <!-- <li><a href="#/sp-bean-autowiring"><i class="fa fa-circle-o text-red"></i>Autowiring</a></li> -->
+          <li class="treeview"><a href="javascript:void(0)"><i class="fa fa-circle-o text-red"></i> Autowiring
+              <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="#/sp-bean-autowiring-by-name"><i class="fa fa-circle-o text-blue"></i>Autowire by Name</a></li>
+                <li><a href="#/sp-bean-autowiring-bytype"><i class="fa fa-circle-o text-blue"></i>Autowire by Type</a></li>
+                <li><a href="#/sp-bean-autowiring-by-constructor"><i class="fa fa-circle-o text-blue"></i>Autowire by Constructor</a></li>
+              </ul>
+          </li>
           <li class="treeview"><a href="javascript:void(0)"><i class="fa fa-circle-o text-red"></i> Beans Understanding
               <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
@@ -114,7 +125,18 @@
           </li>
           <li><a href="#/sp-application-context-aware"><i class="fa fa-circle-o text-red"></i>ApplicationContext Aware</a></li>
           <li><a href="#/sp-bean-defination-inheritance"><i class="fa fa-circle-o text-red"></i>Bean Inheritance</a></li>
-          <li><a href="#/sp-bean-lifecycle-callbacks"><i class="fa fa-circle-o text-red"></i>Lifecycle Callbacks</a></li>
+          <!-- <li><a href="#/sp-bean-lifecycle-callbacks"><i class="fa fa-circle-o text-red"></i>Lifecycle Callbacks</a></li> -->
+          <li class="treeview"><a href="javascript:void(0)"><i class="fa fa-circle-o text-red"></i> Lifecycle Callbacks
+              <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="#/sp-bean-lifecycle-callbacks"><i class="fa fa-circle-o text-blue"></i>Bean Lifecycle Calbacks</a></li>
+                <li><a href="#/sp-abstract-application-context"><i class="fa fa-circle-o text-blue"></i>AbstractApplicationContext</a></li>
+                <li><a href="#/sp-callback-use-globally"><i class="fa fa-circle-o text-blue"></i>GlobalUse</a></li>
+              </ul>
+          </li>
           <li class="treeview"><a href="javascript:void(0)"><i class="fa fa-circle-o text-red"></i> Post Processors
               <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
@@ -145,7 +167,9 @@
                 </span>
             </a>
             <ul class="treeview-menu">
+                <li><a href="#/sp-jsr250-annotations"><i class="fa fa-circle-o text-blue"></i>JSR250 Annotations</a></li>
                 <li><a href="#/sp-annotation-resource"><i class="fa fa-circle-o text-blue"></i>@Resource</a></li>
+                <li><a href="#/sp-init-and-destroy"><i class="fa fa-circle-o text-blue"></i>Init()&Destroy()</a></li>
                 <li><a href="#/sp-annotation-component"><i class="fa fa-circle-o text-blue"></i>@Component</a></li>
               </ul>
           </li>
@@ -156,8 +180,8 @@
             </a>
             <ul class="treeview-menu">
                 <li><a href="#/sp-stereotype-annotations"><i class="fa fa-circle-o text-blue"></i>Setereotype</a></li>
-                <li><a href="#/java8foreachmethoditerableinterface"><i class="fa fa-circle-o text-blue"></i>@Service</a></li>
-                <li><a href="#/java8defaultandstaticmethodinterface"><i class="fa fa-circle-o text-blue"></i>@Repository</a></li>
+                <li><a href="#/sp-annotation-service"><i class="fa fa-circle-o text-blue"></i>@Service</a></li>
+                <li><a href="#/sp-annotation-repository"><i class="fa fa-circle-o text-blue"></i>@Repository</a></li>
                 <li><a href="#/java8defaultandstaticmethodinterface"><i class="fa fa-circle-o text-blue"></i>@Controller</a></li>
               </ul>
           </li>
@@ -185,6 +209,72 @@
               </ul>
             </li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> Level One</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="javascript:void(0)">
+            <i class="fa fa-barcode text-red"></i> <span>Collection</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#/collection-collection-framework"><i class="fa fa-circle-o text-red"></i>Collection Framework</a></li>
+            <li><a href="#/collection-benefits-of-collections"><i class="fa fa-circle-o text-red"></i>Benefits of Collection</a></li>
+            <li class="treeview"><a href="javascript:void(0)"><i class="fa fa-circle-o text-red"></i> Collection Interfaces
+              <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="#/collection-interfaces"><i class="fa fa-circle-o text-blue"></i>Interfaces</a></li>
+                <li><a href="#/collection-interface"><i class="fa fa-circle-o text-blue"></i>Collection Interface</a></li>
+                <li><a href="#/collection-iterator-interface"><i class="fa fa-circle-o text-blue"></i>Iterator Interface</a></li>
+                <li><a href="#/collection-set-interface"><i class="fa fa-circle-o text-blue"></i>Set Interface</a></li>
+                <li><a href="#/collection-list-interface"><i class="fa fa-circle-o text-blue"></i>List Interface</a></li>
+                <li><a href="#/collection-queue-interface"><i class="fa fa-circle-o text-blue"></i>Queue Interface</a></li>
+                <li><a href="#/collection-dequeue-interface"><i class="fa fa-circle-o text-blue"></i>Dequeue Interface</a></li>
+                <li><a href="#/collection-map-interface"><i class="fa fa-circle-o text-blue"></i>Map Interface</a></li>
+                 <li><a href="#/collection-listiterator-interface"><i class="fa fa-circle-o text-blue"></i>ListIterator Interface</a></li>
+                 <li><a href="#/collection-sortedset-interface"><i class="fa fa-circle-o text-blue"></i>SortedSet Interface</a></li>
+                 <li><a href="#/collection-sortedmap-interface"><i class="fa fa-circle-o text-blue"></i>SortedMap Interface</a></li>
+              </ul>
+          </li>
+          <li class="treeview"><a href="javascript:void(0)"><i class="fa fa-circle-o text-red"></i> Collection Classes
+              <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="#/collection-classes"><i class="fa fa-circle-o text-blue"></i>Classes</a></li>
+                <li><a href="#/collection-hashset-class"><i class="fa fa-circle-o text-blue"></i>HashSet Class</a></li>
+                <li><a href="#/collection-treeset-class"><i class="fa fa-circle-o text-blue"></i>TreeSet Class</a></li>
+                <li><a href="#/collection-arraylist-class"><i class="fa fa-circle-o text-blue"></i>ArrayList Class</a></li>
+                <li><a href="#/collection-linkedlist-class"><i class="fa fa-circle-o text-blue"></i>LinkedLIst Class</a></li>
+                <li><a href="#/collection-hash-map-class"><i class="fa fa-circle-o text-blue"></i>HashMap Class</a></li>
+                <li><a href="#/collection-tree-map-class"><i class="fa fa-circle-o text-blue"></i>TreeMap Class</a></li>
+                <li><a href="#/collection-proprity-queue-class"><i class="fa fa-circle-o text-blue"></i>PriorityQueue Class</a></li>
+                 <li><a href="#/collection-collection-class"><i class="fa fa-circle-o text-blue"></i>Collection Class</a></li>
+              </ul>
+          </li>
+          <li><a href="#/collection-synchronized-wrapper"><i class="fa fa-circle-o text-red"></i>Synchronized Wrapper</a></li>
+          <li><a href="#/collection-unmodifiable-wrapper"><i class="fa fa-circle-o text-red"></i>Unmodifiable Wrapper</a></li>
+          <li><a href="#/collection-thread-safe"><i class="fa fa-circle-o text-red"></i>Thread safe collection</a></li>
+            <li class="treeview"><a href="javascript:void(0)"><i class="fa fa-circle-o text-red"></i>Collection API Algorithm
+              <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="#/collection-api-algorithm"><i class="fa fa-circle-o text-blue"></i>API Algorithm</a></li>
+                <li><a href="#/collection-api-algorithm-sorting"><i class="fa fa-circle-o text-blue"></i>Sorting</a></li>
+                <li><a href="#/collection-api-algorithm-suffling"><i class="fa fa-circle-o text-blue"></i>Suffling</a></li>
+                <li><a href="#/collection-api-algorithm-searching"><i class="fa fa-circle-o text-blue"></i>Searching</a></li>
+                <li><a href="#/collection-api-algorithm-composition"><i class="fa fa-circle-o text-blue"></i>Composition</a></li>
+              </ul>
+          </li>
+          <li><a href="#/collection-min-and-max-values"><i class="fa fa-circle-o text-red"></i>Min & Max Values</a></li>
+          <li><a href="#/collection-java8-collection-features"><i class="fa fa-circle-o text-red"></i>Java8 Collection Features</a></li>
           </ul>
         </li>
       </ul>

@@ -150,6 +150,102 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/sp-local', {
 			templateUrl: 'pages/spring/local.html',
 		})
+		.when('/collection-collection-framework', {
+			templateUrl: 'pages/collection/collection-framework.html',
+		})
+		.when('/collection-benefits-of-collections', {
+			templateUrl: 'pages/collection/benifits-of-collection.html',
+		})
+		.when('/collection-interfaces', {
+			templateUrl: 'pages/collection/collection-interfaces.html',
+		})
+		.when('/collection-interface', {
+			templateUrl: 'pages/collection/collection-interface.html',
+		})
+		.when('/collection-iterator-interface', {
+			templateUrl: 'pages/collection/iterator-interface.html',
+		})
+		.when('/collection-set-interface', {
+			templateUrl: 'pages/collection/set-interface.html',
+		})
+		.when('/collection-list-interface', {
+			templateUrl: 'pages/collection/list-interface.html',
+		})
+		.when('/collection-queue-interface', {
+			templateUrl: 'pages/collection/queue-interface.html',
+		})
+		.when('/collection-dequeue-interface', {
+			templateUrl: 'pages/collection/dequeue-interface.html',
+		})
+		.when('/collection-map-interface', {
+			templateUrl: 'pages/collection/map-interface.html',
+		})
+		.when('/collection-listiterator-interface', {
+			templateUrl: 'pages/collection/map-interface.html',
+		})
+		.when('/collection-sortedset-interface', {
+			templateUrl: 'pages/collection/sortedset-interface.html',
+		})
+		.when('/collection-sortedmap-interface', {
+			templateUrl: 'pages/collection/sorted-map-interface.html',
+		})
+		.when('/collection-classes', {
+			templateUrl: 'pages/collection/collection-classes.html',
+		})
+		.when('/collection-hashset-class', {
+			templateUrl: 'pages/collection/hashset-class.html',
+		})
+		.when('/collection-treeset-class', {
+			templateUrl: 'pages/collection/treeset-class.html',
+		})
+		.when('/collection-arraylist-class', {
+			templateUrl: 'pages/collection/arraylist-class.html',
+		})
+		.when('/collection-linkedlist-class', {
+			templateUrl: 'pages/collection/linkedlist-class.html',
+		})
+		.when('/collection-hash-map-class', {
+			templateUrl: 'pages/collection/hashmap-class.html',
+		})
+		.when('/collection-tree-map-class', {
+			templateUrl: 'pages/collection/treemap-class.html',
+		})
+		.when('/collection-proprity-queue-class', {
+			templateUrl: 'pages/collection/priority-queue-class.html',
+		})
+		.when('/collection-collection-class', {
+			templateUrl: 'pages/collection/collection-class.html',
+		})
+		.when('/collection-synchronized-wrapper', {
+			templateUrl: 'pages/collection/synchronized-wrapper.html',
+		})
+		.when('/collection-unmodifiable-wrapper', {
+			templateUrl: 'pages/collection/unmodifiable-wrapper.html',
+		})
+		.when('/collection-thread-safe', {
+			templateUrl: 'pages/collection/thread-safe-collection.html',
+		})
+		.when('/collection-api-algorithm', {
+			templateUrl: 'pages/collection/collection-api-alogrithm.html',
+		})
+		.when('/collection-api-algorithm-sorting', {
+			templateUrl: 'pages/collection/collection-api-alogrithm-sorting.html',
+		})
+		.when('/collection-api-algorithm-suffling', {
+			templateUrl: 'pages/collection/collection-api-alogrithm-suffling.html',
+		})
+		.when('/collection-api-algorithm-searching', {
+			templateUrl: 'pages/collection/collection-api-alogrithm-searching.html',
+		})
+		.when('/collection-api-algorithm-composition', {
+			templateUrl: 'pages/collection/collection-api-alogrithm-composition.html',
+		})
+		.when('/collection-min-and-max-values', {
+			templateUrl: 'pages/collection/min-and-max-values.html',
+		})
+		.when('/collection-java8-collection-features', {
+			templateUrl: 'pages/collection/java8-collection-features.html',
+		})
 		.when('/client', {
 			templateUrl: 'views/client.html',
 			controller: 'ClientController'	
