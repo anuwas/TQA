@@ -246,11 +246,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/collection-java8-collection-features', {
 			templateUrl: 'pages/collection/java8-collection-features.html',
 		})
+		.when('/collection-classes-nutshell', {
+			templateUrl: 'pages/collection/collection-classes-nutshell.html',
+		})
 		.when('/client', {
 			templateUrl: 'views/client.html',
 			controller: 'ClientController'	
 		});
-	
-	
-
 }]);

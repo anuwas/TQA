@@ -31,25 +31,24 @@
           
 <p><span style="font-size:14pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc511405763">Synchronize Wrappers</a></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">The synchronization wrappers add automatic synchronization (thread-safety) to an arbitrary collection. Each of the six core collection interfaces &mdash; Collection, Set, List, Map, SortedSet, and SortedMap &mdash; has one static factory method.</span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt">The synchronization wrappers add automatic synchronization (thread-safety) to an arbitrary collection. Each of the six core collection interfaces &mdash; Collection, Set, List, Map, SortedSet, and SortedMap &mdash; has one static factory method.</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static&nbsp; Collection synchronizedCollection(Collection c);</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static&nbsp; Collection synchronizedCollection(Collection c);</span></span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static&nbsp; Set synchronizedSet(Set s);</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static&nbsp; Set synchronizedSet(Set s);</span></span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static&nbsp; List synchronizedList(List list);</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static&nbsp; List synchronizedList(List list);</span></span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static &lt;K,V&gt; Map&lt;K,V&gt; synchronizedMap(Map&lt;K,V&gt; m);</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static &lt;K,V&gt; Map&lt;K,V&gt; synchronizedMap(Map&lt;K,V&gt; m);</span></span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static&nbsp; SortedSet synchronizedSortedSet(SortedSet s);</span></span></span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static&nbsp; SortedSet synchronizedSortedSet(SortedSet s);</span></span></span></span></span></span></span></p>
-
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static &lt;K,V&gt; SortedMap&lt;K,V&gt; synchronizedSortedMap(SortedMap&lt;K,V&gt; m);</span></span></span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:#f2f9fc"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-family:&quot;Courier New&quot;"><span style="color:#200080">public static &lt;K,V&gt; SortedMap&lt;K,V&gt; synchronizedSortedMap(SortedMap&lt;K,V&gt; m);</span></span></span></span></span></span></p>
 
 <p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt">Each of these methods returns a synchronized (thread-safe) Collection backed up by the specified collection.</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Each of these methods returns a synchronized (thread-safe) Collection backed up by the specified collection.</span></span></span></span></p>
+
 
 
 

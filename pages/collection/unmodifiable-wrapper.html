@@ -31,37 +31,34 @@
           
 <p><span style="font-size:14pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc511405764"> Unmodifiable Wrappers</a></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+<p>&nbsp;</p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt">Unmodifiable wrappers take away the ability to modify the collection by intercepting all the operations that would modify the collection and throwing an&nbsp;</span>UnsupportedOperationException<span style="font-size:12.0pt">. It&rsquo;s main usage are;</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Unmodifiable wrappers take away the ability to modify the collection by intercepting all the operations that would modify the collection and throwing an&nbsp;UnsupportedOperationException. It&rsquo;s main usage are;</span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt">To make a collection&nbsp;immutable&nbsp;once it has been built. In this case, it&rsquo;s good practice not to maintain a reference to the backing collection. This absolutely guarantees immutability.</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">To make a collection&nbsp;immutable&nbsp;once it has been built. In this case, it&rsquo;s good practice not to maintain a reference to the backing collection. This absolutely guarantees immutability.</span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt">To allow certain clients read-only access to your data structures. You keep a reference to the backing collection but hand out a reference to the wrapper. In this way, clients can look but not modify, while you maintain full access.</span></span></span></span></span></p>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">To allow certain clients read-only access to your data structures. You keep a reference to the backing collection but hand out a reference to the wrapper. In this way, clients can look but not modify, while you maintain full access.</span></span></span></span></p>
 
-<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt">These methods are;</span></span></span></span></span></p>
-
-<pre style="margin-left:0cm; margin-right:0cm">
-<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:12.0pt"><span style="color:#200080">public static&nbsp; Collection unmodifiableCollection(Collection&lt;? extends T&gt; c);</span></span></span></span></span></pre>
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">These methods are;</span></span></span></span></p>
 
 <pre style="margin-left:0cm; margin-right:0cm">
-<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:12.0pt"><span style="color:#200080">public static&nbsp; Set unmodifiableSet(Set&lt;? extends T&gt; s);</span></span></span></span></span></pre>
+<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:11.0pt"><span style="color:#200080">public static&nbsp; Collection unmodifiableCollection(Collection&lt;? extends T&gt; c);</span></span></span></span></span></pre>
 
 <pre style="margin-left:0cm; margin-right:0cm">
-<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:12.0pt"><span style="color:#200080">public static&nbsp; List unmodifiableList(List&lt;? extends T&gt; list);</span></span></span></span></span></pre>
+<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:11.0pt"><span style="color:#200080">public static&nbsp; Set unmodifiableSet(Set&lt;? extends T&gt; s);</span></span></span></span></span></pre>
 
 <pre style="margin-left:0cm; margin-right:0cm">
-<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:12.0pt"><span style="color:#200080">public static &lt;K,V&gt; Map&lt;K, V&gt; unmodifiableMap(Map&lt;? extends K, ? extends V&gt; m);</span></span></span></span></span></pre>
+<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:11.0pt"><span style="color:#200080">public static&nbsp; List unmodifiableList(List&lt;? extends T&gt; list);</span></span></span></span></span></pre>
 
 <pre style="margin-left:0cm; margin-right:0cm">
-<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:12.0pt"><span style="color:#200080">public static&nbsp; SortedSet unmodifiableSortedSet(SortedSet&lt;? extends T&gt; s);</span></span></span></span></span></pre>
+<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:11.0pt"><span style="color:#200080">public static &lt;K,V&gt; Map&lt;K, V&gt; unmodifiableMap(Map&lt;? extends K, ? extends V&gt; m);</span></span></span></span></span></pre>
 
 <pre style="margin-left:0cm; margin-right:0cm">
-<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:12.0pt"><span style="color:#200080">public static &lt;K,V&gt; SortedMap&lt;K, V&gt; unmodifiableSortedMap(SortedMap&lt;K, ? extends V&gt; m);</span></span></span></span></span></pre>
+<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:11.0pt"><span style="color:#200080">public static&nbsp; SortedSet unmodifiableSortedSet(SortedSet&lt;? extends T&gt; s);</span></span></span></span></span></pre>
 
 <pre style="margin-left:0cm; margin-right:0cm">
+<span style="font-size:10pt"><span style="background-color:#f2f9fc"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:11.0pt"><span style="color:#200080">public static &lt;K,V&gt; SortedMap&lt;K, V&gt; unmodifiableSortedMap(SortedMap&lt;K, ? extends V&gt; m);</span></span></span></span></span></pre>
 
-&nbsp;</pre>
 
 
 
