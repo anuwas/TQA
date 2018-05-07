@@ -1,0 +1,79 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Collection
+        <small>FAQ</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/misliqa-memory-management">Collection</a></li>
+        <li class="active">ConcurrentHashMap vs Collections.synchronizeMap</li>
+      </ol>
+    </section>
+        <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        
+        <div class="box-body">
+          
+          
+
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc512871465">ConcurrentHashMap vs Collections.SynchronizedMap</a></span></span></span></h2>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong>ConcurrentHashMap</strong>&nbsp;and&nbsp;<strong>Collections.synchronizedMap()</strong>&nbsp;both provide thread-safe operations of collections of data. They are used in multithreaded programs to provide both thread safety and performance improvements. In many cases, we can use either of them.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">But the realization of thread safety is different for these two implementations. ConcurrentHashMap will create a HashEntry[] array internally to store the elements passed in from a Map, while Collections.synchronizedMap() will return a SynchronizedMap.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">The main difference between these two is that ConcurrentHashMap will lock only portion of the data which are being updated while other portion of data can be accessed by other threads. However, Collections.synchronizedMap() will lock all the data while updating, other threads can only access the data when the lock is released. If there are many update operations and relative small amount of read operations, you should choose ConcurrentHashMap.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Also one other difference is that ConcurrentHashMap will not preserve the order of elements in the Map passed in. It is similar to HashMap when storing data. There is no guarantee that the element order is preserved. While Collections.synchronizedMap(0 will preserve the elements order of the Map passed in. For example, if you pass a TreeMap to ConcurrentHashMap, the elements order in the ConcurrentHashMap may not be the same as the order in the TreeMap, but Collections.synchronizedMap() will preserve the order.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Furthermore, ConcurrentHashMap can guarantee that there is no ConcurrentModificationException thrown while one thread is updating the map and another thread is traversing the iterator obtained from the map. However, Collections.synchronizedMap() is not guaranteed on this. If we obtain an Iterator from Collections.synchronizedMap() by calling map.keySet().iterator() and then traverse the iterator, at the same time if another thread is trying to updating the map by calling map.put(K,V), we will get a ConcurrentModificationException.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">Map&lt;String,String&gt; <span style="color:#0000c0">map</span> = Collections.synchronizedMap(<strong><span style="color:#7f0055">new</span></strong> TreeMap&lt;String,String&gt;());</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; map.put(<span style="color:#2a00ff">&quot;key1&quot;</span>,<span style="color:#2a00ff">&quot;value1&quot;</span>);</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; map.put(<span style="color:#2a00ff">&quot;key2&quot;</span>,<span style="color:#2a00ff">&quot;value2&quot;</span>);</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; map.put(<span style="color:#2a00ff">&quot;key3&quot;</span>,<span style="color:#2a00ff">&quot;value3&quot;</span>);</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set&lt;Entry&lt;String,String&gt;&gt; <span style="color:#0000c0">entries</span> = <span style="color:#0000c0">map</span>.entrySet();</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Iterator&lt;Entry&lt;String,String&gt;&gt; iter = entries.iterator();</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">while</span></strong>(iter.hasNext()){</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#0000c0">iter</span>.next()); <span style="color:#3f7f5f">//Will throw ConcurrentModificationException</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#0000c0">map</span>.remove(<span style="color:#2a00ff">&quot;key2&quot;</span>);&nbsp; </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Now I am wondering whether there is one object which can preserve the insertion order of elements like Collections.synchronizedMap() and also doesn&#39;t throw ConcurrentModificationException like ConcurrentHashMap. Fortunately since 1.6 there is a class called ConcurrentSkipListMap which can fulfill these two requirements, from the&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ConcurrentSkipListMap.html" target="_blank">documentation</a>, we can find that ConcurrentSkipListMap will not throw ConcurrentModificationException and also it will preserve the insertion order of the Map passed in. The only drawback it may have is its&nbsp;<a href="http://www.programering.com/a/MzM4MjNwATE.html" target="_blank">performance</a>.</span></span></span></span></p>
+
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc512871465"></a></span></span></span></h2>
+
+
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->

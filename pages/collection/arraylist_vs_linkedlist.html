@@ -1,0 +1,73 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Collection
+        <small>FAQ</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/misliqa-memory-management">Collection</a></li>
+        <li class="active">ArrayList vs LinkedList</li>
+      </ol>
+    </section>
+        <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        
+        <div class="box-body">
+          
+          
+
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="color:#0782c1; font-family:Times New Roman, serif"><span style="font-size:17.3333px">ArrayList vs LinkedList</span></span></h2>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">ArrayList&nbsp;and&nbsp;LinkedList&nbsp;both implements List interface and their methods and results are almost identical. However there are few differences between them which make one better over another depending on the requirement.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong>ArrayList Vs LinkedList</strong></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">1)&nbsp;Search: ArrayList search operation is pretty fast compared to the LinkedList search operation.&nbsp;get(int index)&nbsp;in ArrayList gives the performance of&nbsp;O(1)&nbsp;while LinkedList performance is&nbsp;O(n).</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Reason: ArrayList maintains index based system for its elements as it uses array data structure implicitly which makes it faster for searching an element in the list. On the other side LinkedList implements&nbsp;</span></span><strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">doubly linked list</span></span></strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">&nbsp;which requires the traversal through all the elements for searching an element.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">2)&nbsp;</span></span><strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Deletion</span></span></strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">: LinkedList remove operation gives&nbsp;</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">O(1)</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">&nbsp;performance while ArrayList gives variable performance:&nbsp;</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">O(n)</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">&nbsp;in worst case (while removing first element) and&nbsp;</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">O(1)</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">&nbsp;in best case (While removing last element).</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Conclusion: LinkedList element deletion is faster compared to ArrayList.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Reason: LinkedList&rsquo;s each element maintains two pointers (addresses) which points to the both neighbor elements in the list. Hence removal only requires change in the pointer location in the two neighbor nodes (elements) of the node which is going to be removed. While In ArrayList all the elements need to be shifted to fill out the space created by removed element.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">3)&nbsp;</span></span><strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Inserts Performance</span></span></strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">: LinkedList add method gives&nbsp;</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">O(1)</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">&nbsp;performance while ArrayList gives&nbsp;</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">O(n)</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">&nbsp;in worst case. Reason is same as explained for remove.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">4)&nbsp;</span></span><strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Memory Overhead</span></span></strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">: ArrayList maintains indexes and element data while LinkedList maintains element data and two pointers for neighbor nodes hence the memory consumption is high in LinkedList comparatively.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">There are few&nbsp;</span></span><strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">similarities between</span></span></strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">&nbsp;these classes which are as follows:</span></span></span></span></span></p>
+
+<ol>
+  <li><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Both ArrayList and LinkedList are implementation of List interface.</span></span></span></span></span></li>
+  <li><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">They both maintain the elements insertion order which means while displaying ArrayList and LinkedList elements the result set would be having the same order in which the elements got inserted into the List.</span></span></span></span></span></li>
+  <li><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Both these classes are non-synchronized and can be made synchronized explicitly by using&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Collections.html#synchronizedList(java.util.List)" style="box-sizing:border-box; transition:all 0.1s ease-in-out" target="_blank">Collections.synchronizedList</a>&nbsp;method.</span></span></span></span></span></li>
+  <li><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">The iterator and listIterator returned by these classes are fail-fast (if list is structurally modified at any time after the iterator is created, in any way except through the iterator&rsquo;s own remove or add methods, the iterator will throw a&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/ConcurrentModificationException.html" style="box-sizing:border-box; transition:all 0.1s ease-in-out" target="_blank">ConcurrentModificationException</a>).</span></span></span></span></span></li>
+</ol>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong>When to use LinkedList and when to use ArrayList?</strong></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">1) As explained above the insert and remove operations give good performance (</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">O(1)</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">) in LinkedList compared to ArrayList(</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">O(n)</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">). Hence if there is a requirement of frequent addition and deletion in application then LinkedList is a best choice.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">2) Search (get method) operations are fast in Arraylist (</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">O(1)</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">) but not in LinkedList (</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">O(n)</span></span><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">) so If there are less add and remove operations and more search operations requirement, ArrayList would be your best bet.</span></span></span></span></span></p>
+
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc512871465"></a></span></span></span></h2>
+
+
+
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->

@@ -1,0 +1,235 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Mislinious
+        <small>Has-A(inheritance) vs IS-A(composition)</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/misliqa-memory-management">Collection</a></li>
+        <li class="active">4. Has-A(inheritance) vs IS-A(composition)</li>
+      </ol>
+    </section>
+        <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        
+        <div class="box-body">
+          
+          
+<p><span style="font-size:14pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><strong><a name="_Toc512361271">Has-A(inheritance) vs IS-A(composition)</a></strong></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">One of the fundamental activities of an object-oriented design is establishing relationships between classes. Two fundamental ways to relate classes are&nbsp;<em>inheritance</em>&nbsp;and&nbsp;<em>composition</em>. Although the compiler and Java virtual machine (JVM) will do a lot of work for you when you use inheritance, you can also get at the functionality of inheritance when you use composition.</span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">About inheritance</span></span></strong>&nbsp;In this article, I&#39;ll be talking about single inheritance through class extension, as in:</span></span></span></span></p>
+
+<div style="border:solid #eeeeee 1.0pt; padding:8.0pt 8.0pt 8.0pt 8.0pt">
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#000088">class</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"> <strong><span style="color:#660066">Fruit</span></strong> </span></span><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">{</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp;&nbsp; <em><span style="color:#880000">//...</span></em></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">}</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#000088">class</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"> <strong><span style="color:#660066">Apple</span></strong> <strong><span style="color:#000088">extends</span></strong> <strong><span style="color:#660066">Fruit</span></strong> </span></span><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">{</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp;&nbsp; <em><span style="color:#880000">//...</span></em></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">}</span></span></span></span></span></span></span></span></p>
+</div>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">In this simple example, class&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Apple</span></span></span>&nbsp;is related to class&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Fruit</span></span></span>&nbsp;by inheritance, because&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Apple</span></span></span>&nbsp;extends&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Fruit</span></span></span><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">. </span></span>In this example<span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">,&nbsp;</span></span><span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Fruit</span></span></span>&nbsp;is the&nbsp;superclass&nbsp;and&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Apple </span></span></span>is the&nbsp;subclass.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">About composition</span></span></strong>&nbsp;By composition, I simply mean using instance variables that are references to other objects. For example:</span></span></span></span></p>
+
+<div style="border:solid #eeeeee 1.0pt; padding:8.0pt 8.0pt 8.0pt 8.0pt">
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#000088">class</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"> <strong><span style="color:#660066">Fruit</span></strong> </span></span><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">{</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp;&nbsp; <em><span style="color:#880000">//...</span></em></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">}</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#000088">class</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"> <strong><span style="color:#660066">Apple</span></strong> </span></span><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">{</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp;&nbsp; <strong><span style="color:#000088">private</span></strong> <strong><span style="color:#660066">Fruit</span></strong> fruit </span></span><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">=</span></span></span><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"> <strong><span style="color:#000088">new</span></strong> <strong><span style="color:#660066">Fruit</span></strong></span></span><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">();</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp;&nbsp; <em><span style="color:#880000">//...</span></em></span></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="background-color:#e5e5e5"><span style="font-size:11pt"><span style="background-color:#e5e5e5"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#666600">}</span></span></span></span></span></span></span></span></p>
+</div>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">In the example above, class&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Apple</span></span></span>&nbsp;is related to class&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Fruit</span></span></span>&nbsp;by composition, because&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Apple</span></span></span>&nbsp;has an instance variable that holds a reference to a&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Fruit</span></span></span>&nbsp;object. In this example<span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">,&nbsp;</span></span><span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Apple</span></span></span>&nbsp;is what I will call the<span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&nbsp;<em>front-end class</em>&nbsp;</span></span>and&nbsp;<span style="font-size:10.0pt"><span style="font-family:&quot;Courier New&quot;"><span style="color:#7c1806">Fruit</span></span></span>&nbsp;is what I will call the<span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&nbsp;<em>back-end class</em>. </span></span>In a composition relationship, the front-end class holds a reference in one of its instance variables to a back-end class.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><strong><a name="_Toc512361272"><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:black">Has-A (Association) :</span></span></span></a></strong></span></span></span></span></h2>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">In Object orientation design, We can say &ldquo;class one is in Has-A relationship with class B if class A holds reference of Claas B&rdquo;.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">By this reference of class B, A can access all properties of class B which are allowed.</span></span></span></span></p>
+
+<address><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#444444">Some off topic talk, To use Inheritance and Aggregation in your code is a good programming practice. It reduces the code duplication and increases reusability.</span></span></span></address>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:10.5pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#444444">Example:</span></span></span></span></span></span></p>
+
+<div style="border:solid #cccccc 1.0pt; padding:2.0pt 5.0pt 2.0pt 5.0pt">
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">class</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">HardDisk</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">public</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">void</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> writeData</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">String</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> data</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">)</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">System</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">.</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">out</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">.</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas">println</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#008800">&quot;Data is being written : &quot;</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">+</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> data</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">);</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+
+&nbsp;</pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">class</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">UseDell</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#880000">// segate is referece of HardDisk class in UseDell class.</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#880000">// So, UseDell Has-A HardDisk</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">HardDisk</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> segate </span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">=</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">new</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">HardDisk</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">();</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">public</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">void</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> save </span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">String</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> data</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">)</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; segate</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">.</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas">writeData</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas">data</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">);</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+</div>
+
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><strong><a name="_Toc512361273"><span style="font-size:12.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:black">Aggregation v/s Composition :</span></span></span></a></strong></span></span></span></span></h2>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">So this is a famous confusing topic, Here we are goes to explain this as simple as possible.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Has-A relationship or Association can be divided in two types :<br />
+Aggregation and Composition</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:black">Aggregation :</span></span></span></strong></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Consider above example: HardDisk class and UseDell class.<br />
+In the example, UseDell HAS-A HardDisk.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">If Laptop stops working somehow, you can remove harddisk from that and connect to other laptop, this is Aggregation.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">In aggregation container class (UseDell) and referenced class (HardDisk) can have their independent existence.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><strong><span style="font-size:10.0pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:black">Composition</span></span></span></strong><strong><span style="font-size:10.5pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#444444">:</span></span></span></strong></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Now for Composition, consider two different class House and Kitchen</span></span><span style="font-size:10.5pt"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="color:#444444">.</span></span></span></span></span></span></p>
+
+<div style="border:solid #cccccc 1.0pt; padding:2.0pt 5.0pt 2.0pt 5.0pt">
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">class</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">House</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">Kitchen</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> kitchen </span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">=</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">new</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">Kitchen</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">();</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#880000">// More code for House class.</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+
+&nbsp;</pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">class</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">Kitchen</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#880000">// code of Kitchen class.</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+</div>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">If House gets destroyed Kitchen also will be destroyed with that House, This is composition.<br />
+In composition reference class (Kitchen) cannot exist if container class (House) gets destroyed.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Reference class has its own existence even if Container class gets destroyed in Aggregation.<br />
+Reference class can exist only with Container class in Composition.</span></span></span></span></span></p>
+
+<div style="border:solid #cccccc 1.0pt; padding:2.0pt 5.0pt 2.0pt 5.0pt">
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">public</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">class</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">TestRelationship</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">public</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">static</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">void</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> main</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">String</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">[]</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> args</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">)</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">Dell</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"> oDell </span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">=</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">new</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">Dell</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">();</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">if</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas">oDell </span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">instanceof</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">Laptop</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">)</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">System</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">.</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">out</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">.</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas">println</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#008800">&quot;Dell IS-A Laptop.&quot;</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">);</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">if</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas">oDell </span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">instanceof</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">Formatable</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">)</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">{</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">System</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">.</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">out</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">.</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas">println</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#008800">&quot;Dell IS-A Formatable.&quot;</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">);</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+
+&nbsp;</pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#880000">// Test HAS-A</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#000088">new</span></span></span> <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#660066">UseDell</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">().</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas">save</span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">(</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#008800">&quot;This will be stored in segate.&quot;</span></span></span><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">);</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; <span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+
+<pre style="margin-left:0cm; margin-right:0cm">
+<span style="background-color:white"><span style="font-size:10pt"><span style="background-color:white"><span style="font-family:&quot;Courier New&quot;"><span style="font-size:9.0pt"><span style="font-family:Consolas"><span style="color:#666600">}</span></span></span></span></span></span></span></pre>
+</div>
+
+
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->

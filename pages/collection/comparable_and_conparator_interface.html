@@ -1,0 +1,375 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Collection
+        <small>FAQ</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/misliqa-memory-management">Collection</a></li>
+        <li class="active">Comparable and Conparator Interface</li>
+      </ol>
+    </section>
+        <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        
+        <div class="box-body">
+          
+          
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="color:#0782c1; font-family:Times New Roman,serif"><span style="font-size:17.3333px">Comparable and Conparatory Interface</span></span></h2>
+
+<p>&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">The&nbsp;<em>Comparable</em>&nbsp;interface is an interface for objects that can be compared according to some order. Its single method is&nbsp;<em>compareTo</em>, which operates on two values: the object itself and the argument object of the same type. For instance,&nbsp;<em>Integer</em>,&nbsp;<em>Long</em>, and other numeric types implement this interface.&nbsp;<em>String</em>&nbsp;also implements this interface, and its&nbsp;<em>compareTo</em>&nbsp;method compares strings in lexicographical order.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">The&nbsp;<em>Comparable</em>&nbsp;interface allows to sort lists of corresponding objects with the&nbsp;<em>Collections.sort()</em>&nbsp;method and uphold the iteration order in collections that implement&nbsp;<em>SortedSet</em>&nbsp;and&nbsp;<em>SortedMap</em>. If your objects can be sorted using some logic, they should implement the&nbsp;<em>Comparable</em>&nbsp;interface.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">The&nbsp;<em>Comparable</em>&nbsp;interface usually is implemented using natural ordering of the elements. For instance, all&nbsp;<em>Integer</em>&nbsp;numbers are ordered from lesser to greater values. But sometimes you may want to implement another kind of ordering, for instance, to sort the numbers in descending order. The&nbsp;<em>Comparator</em>&nbsp;interface can help here.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">The class of the objects you want to sort does not need to implement this interface. You simply create an implementing class and define the&nbsp;<em>compare</em>method which receives two objects and decides how to order them. You may then use the instance of this class to override the natural ordering of the&nbsp;<em>Collections.sort()</em>&nbsp;method or&nbsp;<em>SortedSet</em>&nbsp;and&nbsp;<em>SortedMap</em>&nbsp;instances.</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm; text-align:start"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">As the&nbsp;<em>Comparator</em>&nbsp;interface is a functional interface, you may replace it with a lambda expression, as in the following example. It shows ordering a list using a natural ordering (<em>Integer</em>&lsquo;s&nbsp;<em>Comparable</em>&nbsp;interface) and using a custom iterator (<em>Comparator&lt;Integer&gt;</em>&nbsp;interface).</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Comparable with Comparable:</span></span></strong></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">public</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> <strong><span style="color:#7f0055">class</span></strong> Fruit <strong><span style="color:#7f0055">implements</span></strong> Comparable&lt;Fruit&gt;{</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">private</span></strong> String <span style="color:#0000c0">fruitName</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">private</span></strong> String <span style="color:#0000c0">fruitDesc</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">private</span></strong> <strong><span style="color:#7f0055">int</span></strong> <span style="color:#0000c0">quantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> Fruit(String <span style="color:#6a3e3e">fruitName</span>, String <span style="color:#6a3e3e">fruitDesc</span>, <strong><span style="color:#7f0055">int</span></strong> <span style="color:#6a3e3e">quantity</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">super</span></strong>();</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">fruitName</span> = <span style="color:#6a3e3e">fruitName</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">fruitDesc</span> = <span style="color:#6a3e3e">fruitDesc</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">quantity</span> = <span style="color:#6a3e3e">quantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> String getFruitName() {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <span style="color:#0000c0">fruitName</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> setFruitName(String <span style="color:#6a3e3e">fruitName</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">fruitName</span> = <span style="color:#6a3e3e">fruitName</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> String getFruitDesc() {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <span style="color:#0000c0">fruitDesc</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> setFruitDesc(String <span style="color:#6a3e3e">fruitDesc</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">fruitDesc</span> = <span style="color:#6a3e3e">fruitDesc</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">int</span></strong> getQuantity() {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <span style="color:#0000c0">quantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> setQuantity(<strong><span style="color:#7f0055">int</span></strong> <span style="color:#6a3e3e">quantity</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">quantity</span> = <span style="color:#6a3e3e">quantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">int</span></strong> compareTo(Fruit <span style="color:#6a3e3e">compareFruit</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">int</span></strong> <span style="color:#6a3e3e">compareQuantity</span> = ((Fruit) <span style="color:#6a3e3e">compareFruit</span>).getQuantity(); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#3f7f5f">//ascending order</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">quantity</span> - <span style="color:#6a3e3e">compareQuantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#3f7f5f">//descending order</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#3f7f5f">//return compareQuantity - this.quantity<u>;</u></span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:10.0pt"><span style="font-family:Consolas">}</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">public</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> <strong><span style="color:#7f0055">class</span></strong> SortFruitObject {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">static</span></strong> <strong><span style="color:#7f0055">void</span></strong> main(String <span style="color:#6a3e3e">args</span><u>[</u>]){</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit[] <span style="color:#6a3e3e">fruits</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit[4];</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit <span style="color:#6a3e3e">pineappale</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit(<span style="color:#2a00ff">&quot;Pineapple&quot;</span>, <span style="color:#2a00ff">&quot;Pineapple description&quot;</span>,70); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit <span style="color:#6a3e3e">apple</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit(<span style="color:#2a00ff">&quot;Apple&quot;</span>, <span style="color:#2a00ff">&quot;Apple description&quot;</span>,100); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit <span style="color:#6a3e3e">orange</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit(<span style="color:#2a00ff">&quot;Orange&quot;</span>, <span style="color:#2a00ff">&quot;Orange description&quot;</span>,80); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit <span style="color:#6a3e3e">banana</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit(<span style="color:#2a00ff">&quot;Banana&quot;</span>, <span style="color:#2a00ff">&quot;Banana description&quot;</span>,90); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#6a3e3e">fruits</span>[0]=<span style="color:#6a3e3e">pineappale</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#6a3e3e">fruits</span>[1]=<span style="color:#6a3e3e">apple</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#6a3e3e">fruits</span>[2]=<span style="color:#6a3e3e">orange</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#6a3e3e">fruits</span>[3]=<span style="color:#6a3e3e">banana</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Arrays.<em>sort</em>(<span style="color:#6a3e3e">fruits</span>);</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">int</span></strong> <span style="color:#6a3e3e">i</span>=0;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">for</span></strong>(Fruit <span style="color:#6a3e3e">temp</span>: <span style="color:#6a3e3e">fruits</span>){</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#2a00ff">&quot;fruits &quot;</span> + ++<span style="color:#6a3e3e">i</span> + <span style="color:#2a00ff">&quot; : &quot;</span> + <span style="color:#6a3e3e">temp</span>.getFruitName() + </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#2a00ff">&quot;, Quantity : &quot;</span> + <span style="color:#6a3e3e">temp</span>.getQuantity());</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:10.0pt"><span style="font-family:Consolas">}</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:12pt"><span style="background-color:white"><span style="font-family:&quot;Times New Roman&quot;,serif"><strong><span style="font-size:11.0pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Compare with Comparator:</span></span></strong></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">import</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> java.util.Comparator;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">public</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> <strong><span style="color:#7f0055">class</span></strong> Fruit <strong><span style="color:#7f0055">implements</span></strong> Comparable&lt;Fruit&gt;{</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">private</span></strong> String <span style="color:#0000c0">fruitName</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">private</span></strong> String <span style="color:#0000c0">fruitDesc</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">private</span></strong> <strong><span style="color:#7f0055">int</span></strong> <span style="color:#0000c0">quantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> Fruit(String <span style="color:#6a3e3e">fruitName</span>, String <span style="color:#6a3e3e">fruitDesc</span>, <strong><span style="color:#7f0055">int</span></strong> <span style="color:#6a3e3e">quantity</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">super</span></strong>();</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">fruitName</span> = <span style="color:#6a3e3e">fruitName</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">fruitDesc</span> = <span style="color:#6a3e3e">fruitDesc</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">quantity</span> = <span style="color:#6a3e3e">quantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> String getFruitName() {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <span style="color:#0000c0">fruitName</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> setFruitName(String <span style="color:#6a3e3e">fruitName</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">fruitName</span> = <span style="color:#6a3e3e">fruitName</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> String getFruitDesc() {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <span style="color:#0000c0">fruitDesc</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> setFruitDesc(String <span style="color:#6a3e3e">fruitDesc</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">fruitDesc</span> = <span style="color:#6a3e3e">fruitDesc</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">int</span></strong> getQuantity() {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <span style="color:#0000c0">quantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">void</span></strong> setQuantity(<strong><span style="color:#7f0055">int</span></strong> <span style="color:#6a3e3e">quantity</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">quantity</span> = <span style="color:#6a3e3e">quantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">int</span></strong> compareTo(Fruit <span style="color:#6a3e3e">compareFruit</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">int</span></strong> <span style="color:#6a3e3e">compareQuantity</span> = ((Fruit) <span style="color:#6a3e3e">compareFruit</span>).getQuantity(); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#3f7f5f">//ascending order</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <strong><span style="color:#7f0055">this</span></strong>.<span style="color:#0000c0">quantity</span> - <span style="color:#6a3e3e">compareQuantity</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#3f7f5f">//descending order</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#3f7f5f">//return compareQuantity - this.quantity;</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">static</span></strong> Comparator&lt;Fruit&gt; <em><span style="color:#0000c0">FruitNameComparator</span></em> </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <strong><span style="color:#7f0055">new</span></strong> Comparator&lt;Fruit&gt;() {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">int</span></strong> compare(Fruit <span style="color:#6a3e3e">fruit1</span>, Fruit <span style="color:#6a3e3e">fruit2</span>) {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String <span style="color:#6a3e3e">fruitName1</span> = <span style="color:#6a3e3e">fruit1</span>.getFruitName().toUpperCase();</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String <span style="color:#6a3e3e">fruitName2</span> = <span style="color:#6a3e3e">fruit2</span>.getFruitName().toUpperCase();</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#3f7f5f">//ascending order</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">return</span></strong> <span style="color:#6a3e3e">fruitName1</span>.compareTo(<span style="color:#6a3e3e">fruitName2</span>);</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#3f7f5f">//descending order</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#3f7f5f">//return fruitName2.compareTo(fruitName1);</span></span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">}</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">import</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> java.util.Arrays;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:10.0pt"><span style="font-family:Consolas"><span style="color:#7f0055">public</span></span></span></strong><span style="font-size:10.0pt"><span style="font-family:Consolas"> <strong><span style="color:#7f0055">class</span></strong> SortFruitObject {</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">public</span></strong> <strong><span style="color:#7f0055">static</span></strong> <strong><span style="color:#7f0055">void</span></strong> main(String <span style="color:#6a3e3e">args</span><u>[</u>]){</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit[] <span style="color:#6a3e3e">fruits</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit[4];</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit <span style="color:#6a3e3e">pineappale</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit(<span style="color:#2a00ff">&quot;Pineapple&quot;</span>, <span style="color:#2a00ff">&quot;Pineapple description&quot;</span>,70); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit <span style="color:#6a3e3e">apple</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit(<span style="color:#2a00ff">&quot;Apple&quot;</span>, <span style="color:#2a00ff">&quot;Apple description&quot;</span>,100); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit <span style="color:#6a3e3e">orange</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit(<span style="color:#2a00ff">&quot;Orange&quot;</span>, <span style="color:#2a00ff">&quot;Orange description&quot;</span>,80); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fruit <span style="color:#6a3e3e">banana</span> = <strong><span style="color:#7f0055">new</span></strong> Fruit(<span style="color:#2a00ff">&quot;Banana&quot;</span>, <span style="color:#2a00ff">&quot;Banana description&quot;</span>,90); </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#6a3e3e">fruits</span>[0]=<span style="color:#6a3e3e">pineappale</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#6a3e3e">fruits</span>[1]=<span style="color:#6a3e3e">apple</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#6a3e3e">fruits</span>[2]=<span style="color:#6a3e3e">orange</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#6a3e3e">fruits</span>[3]=<span style="color:#6a3e3e">banana</span>;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Arrays.<em>sort</em>(<span style="color:#6a3e3e">fruits</span>, Fruit.<em><span style="color:#0000c0">FruitNameComparator</span></em>);</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">int</span></strong> <span style="color:#6a3e3e">i</span>=0;</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><span style="color:#7f0055">for</span></strong>(Fruit <span style="color:#6a3e3e">temp</span>: <span style="color:#6a3e3e">fruits</span>){</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; System.<strong><em><span style="color:#0000c0">out</span></em></strong>.println(<span style="color:#2a00ff">&quot;fruits &quot;</span> + ++<span style="color:#6a3e3e">i</span> + <span style="color:#2a00ff">&quot; : &quot;</span> + <span style="color:#6a3e3e">temp</span>.getFruitName() + </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#2a00ff">&quot;, Quantity : &quot;</span> + <span style="color:#6a3e3e">temp</span>.getQuantity());</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:Consolas">}</span></span></span></span></span></p>
+
+
+
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->

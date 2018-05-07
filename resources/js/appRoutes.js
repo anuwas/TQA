@@ -249,6 +249,51 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/collection-classes-nutshell', {
 			templateUrl: 'pages/collection/collection-classes-nutshell.html',
 		})
+		.when('/collection-faq-hashmap-work-internally', {
+			templateUrl: 'pages/collection/how_hashmap_work_internally.html',
+		})
+		.when('/collection-faq-difference-hashmap-hashtable', {
+			templateUrl: 'pages/collection/difference_hashmap_hashtable.html',
+		})
+		.when('/collection-faq-difference-hashset-hashmap', {
+			templateUrl: 'pages/collection/difference_hashset_hashmap.html',
+		})
+		.when('/collection-faq-concurrenthashmap-collections-synchronizedmap', {
+			templateUrl: 'pages/collection/difference_concurrenthashmap_collections_synchronize.html',
+		})
+		.when('/collection-faq-hashtable-concurrenthashmap', {
+			templateUrl: 'pages/collection/hashtable_vs_concurrent_hashmap.html',
+		})
+		.when('/collection-faq-arraylist-vs-linkedlist', {
+			templateUrl: 'pages/collection/arraylist_vs_linkedlist.html',
+		})
+		.when('/collection-faq-difference-arraylist-vector', {
+			templateUrl: 'pages/collection/difference_arraylist_vector.html',
+		})
+		.when('/collection-faq-difference-hashset-hashtree', {
+			templateUrl: 'pages/collection/difference_hashset_hashtree.html',
+		})
+		.when('/collection-faq-fail-first-vs-fail-safe', {
+			templateUrl: 'pages/collection/fail_first_vs_fail_safe.html',
+		})
+		.when('/collection-faq-comprable-and-comparator-interface', {
+			templateUrl: 'pages/collection/comparable_and_conparator_interface.html',
+		})
+		.when('/misliqa-memory-management', {
+			templateUrl: 'pages/mislinious/memory_management.html',
+		})
+		.when('/misliqa-encapsulation', {
+			templateUrl: 'pages/mislinious/encapsulation.html',
+		})
+		.when('/misliqa-abstraction', {
+			templateUrl: 'pages/mislinious/abstraction.html',
+		})
+		.when('/misliqa-has-a-vs-is-a-relationship', {
+			templateUrl: 'pages/mislinious/has-a-vs-is-a.html',
+		})
+		.when('/misliqa-shallow-clone-vs-deep-clone', {
+			templateUrl: 'pages/mislinious/shallow_clone_vs_deep_clone.html',
+		})
 		.when('/client', {
 			templateUrl: 'views/client.html',
 			controller: 'ClientController'	

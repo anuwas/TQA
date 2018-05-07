@@ -1,0 +1,119 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Collection
+        <small>FAQ</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/misliqa-memory-management">Collection</a></li>
+        <li class="active">Difference HashMap HashTable</li>
+      </ol>
+    </section>
+        <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        
+        <div class="box-body">
+          
+          
+
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc512871465">Difference between HashMap and HashTable</a></span></span></span></h2>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+<table border="1" cellspacing="0" class="Table" style="background:white; border-collapse:collapse; border:solid #c7ccbe 1.0pt">
+  <tbody>
+    <tr>
+      <td style="background-color:#c7ccbe; width:242.9pt">
+      <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:13.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">HashMap</span></span></strong></span></span></span></p>
+      </td>
+      <td style="background-color:#c7ccbe; width:226.4pt">
+      <p style="margin-left:0cm; margin-right:0cm; text-align:center"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><strong><span style="font-size:13.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Hashtable</span></span></strong></span></span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:white; border-color:#c7ccbe; width:242.9pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">1) HashMap is&nbsp;<strong>non synchronized</strong>. It is not-thread safe and can&#39;t be shared between many threads without proper synchronization code.</span></span></span></span></span></p>
+      </td>
+      <td style="background-color:white; border-color:#c7ccbe; width:226.4pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">Hashtable is&nbsp;<strong>synchronized</strong>. It is thread-safe and can be shared with many threads.</span></span></span></span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#eff1eb; border-color:#c7ccbe; width:242.9pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">2) HashMap&nbsp;<strong>allows one null key and multiple null values</strong>.</span></span></span></span></span></p>
+      </td>
+      <td style="background-color:#eff1eb; width:226.4pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">Hashtable&nbsp;<strong>doesn&#39;t allow any null key or value</strong>.</span></span></span></span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:white; border-color:#c7ccbe; width:242.9pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">3) HashMap is a&nbsp;<strong>new class introduced in JDK 1.2</strong>.</span></span></span></span></span></p>
+      </td>
+      <td style="background-color:white; width:226.4pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">Hashtable is a&nbsp;<strong>legacy class</strong>.</span></span></span></span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#eff1eb; border-color:#c7ccbe; width:242.9pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">4) HashMap is&nbsp;<strong>fast</strong>.</span></span></span></span></span></p>
+      </td>
+      <td style="background-color:#eff1eb; width:226.4pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">Hashtable is&nbsp;<strong>slow</strong>.</span></span></span></span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:white; border-color:#c7ccbe; width:242.9pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">5) We can make the HashMap as synchronized by calling this code<br />
+      Map m = Collections.synchronizedMap(hashMap);</span></span></span></span></span></p>
+      </td>
+      <td style="background-color:white; width:226.4pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">Hashtable is internally synchronized and can&#39;t be unsynchronized.</span></span></span></span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#eff1eb; border-color:#c7ccbe; width:242.9pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">6) HashMap is&nbsp;<strong>traversed by Iterator</strong>.</span></span></span></span></span></p>
+      </td>
+      <td style="background-color:#eff1eb; width:226.4pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">Hashtable is&nbsp;<strong>traversed by Enumerator and Iterator</strong>.</span></span></span></span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:white; border-color:#c7ccbe; width:242.9pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">7) Iterator in HashMap is&nbsp;<strong>fail-fast</strong>.</span></span></span></span></span></p>
+      </td>
+      <td style="background-color:white; width:226.4pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">Enumerator in Hashtable is&nbsp;<strong>not fail-fast</strong>.</span></span></span></span></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#eff1eb; border-color:#c7ccbe; width:242.9pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">8) HashMap inherits&nbsp;<strong>AbstractMap</strong>&nbsp;class.</span></span></span></span></span></p>
+      </td>
+      <td style="background-color:#eff1eb; width:226.4pt">
+      <p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="color:black"><span style="font-size:10.0pt"><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">Hashtable inherits&nbsp;<strong>Dictionary</strong>&nbsp;class.</span></span></span></span></span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="margin-left:0cm; margin-right:0cm">&nbsp;</p>
+
+
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->

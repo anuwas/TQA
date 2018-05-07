@@ -1,0 +1,45 @@
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Collection
+        <small>FAQ</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#/misliqa-memory-management">Collection</a></li>
+        <li class="active">HashTable vs ConcurrentHashMap</li>
+      </ol>
+    </section>
+        <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="box">
+        
+        <div class="box-body">
+          
+          
+<h2 style="margin-left:36pt; margin-right:0cm"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:black"><a name="_Toc512871465">ConcurrentHashMap vs Collections.SynchronizedMap</a></span></span></span></h2>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Both ConcurrentHashMap and Hashtable are Collection classes for storing key value pairs and they both provide fast element search with a supplied key. They have much in common. However, we will not discuss the similarities between them here, instead we will focus on the differences between them.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">ConcurrentHashMap and Hashtable are both thread safe. But the mechanism for thread safe is different between them. Hashtable is synchronized, it utilizes the synchronization mechanism; while ConcurrentHashMap uses segmentation to lock the data, it uses concurrent locks operations for thread safety instead of synchronized.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">Since ConcurrentHashMap introduced concept of segmentation , how large it becomes only certain part of it get locked to provide thread safety so many other readers can still access map without&nbsp;waiting foriteration to complete.</span></span></span></span></p>
+
+<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="background-color:white"><span style="font-family:Calibri,sans-serif"><span style="color:black">So if you want to store large amount of data in a multithreaded program, you should consider to choose ConcurrentHashMap.</span></span></span></span></p>
+
+
+
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->
