@@ -44,8 +44,6 @@ public class UserDetail {
 		this.officeAddress = officeAddress;
 	}
 	
-	
-	
 	public Date getJoinDate() {
 		return joinDate;
 	}
@@ -65,6 +63,4 @@ public class UserDetail {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
-	
 }

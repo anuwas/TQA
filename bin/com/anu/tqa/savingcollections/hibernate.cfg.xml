@@ -13,6 +13,6 @@
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.connection.pool_size">5</property>
   <property name="hibernate.hbm2ddl.auto">create</property>
-  <mapping class="com.anu.tqa.configuringcollectionandkeys.dto.UserDetail"/>
+  <mapping class="com.anu.tqa.savingcollections.dto.UserDetail"/>
  </session-factory>
 </hibernate-configuration>
