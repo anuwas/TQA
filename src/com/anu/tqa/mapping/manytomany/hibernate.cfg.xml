@@ -14,7 +14,7 @@
   <property name="hibernate.connection.pool_size">5</property>
   <property name="hibernate.hbm2ddl.auto">create</property>
   
-  <mapping class="com.anu.tqa.mapping.manytomany.singletable.dto.UserDetail"/>
-  <mapping class="com.anu.tqa.mapping.manytomany.singletable.dto.Vehicle"/>
+  <mapping class="com.anu.tqa.mapping.manytomany.dto.UserDetail"/>
+  <mapping class="com.anu.tqa.mapping.manytomany.dto.Vehicle"/>
  </session-factory>
 </hibernate-configuration>

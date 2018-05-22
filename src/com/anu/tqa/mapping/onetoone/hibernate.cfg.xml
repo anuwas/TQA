@@ -13,8 +13,7 @@
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.connection.pool_size">5</property>
   <property name="hibernate.hbm2ddl.auto">create</property>
-  
-  <mapping class="com.anu.tqa.mapping.manytomany.singletable.dto.UserDetail"/>
-  <mapping class="com.anu.tqa.mapping.manytomany.singletable.dto.Vehicle"/>
+  <mapping class="com.anu.tqa.mapping.onetoone.dto.UserDetail"/>
+  <mapping class="com.anu.tqa.mapping.onetoone.dto.Vehicle"/>
  </session-factory>
 </hibernate-configuration>
