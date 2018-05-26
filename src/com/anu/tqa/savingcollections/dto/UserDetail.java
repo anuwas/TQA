@@ -15,7 +15,7 @@ public class UserDetail {
 	private int userId;
 	private String userName;
 	@ElementCollection
-	private Set<Address> listOfAddress = new HashSet();
+	private Set<Address> listOfAddress = new HashSet<>();
 	
 
 	public Set<Address> getListOfAddress() {

@@ -1,6 +1,5 @@
 package com.anu.tqa.savingcollections;
 
-import java.util.Date;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -3,8 +3,6 @@ package com.anu.tqa.configuringcollectionandkeys.dto;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -16,7 +14,6 @@ import javax.persistence.JoinTable;
 import org.hibernate.annotations.CollectionId;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
-import org.hibernate.jpamodelgen.xml.jaxb.GenerationType;
 
 
 @Entity

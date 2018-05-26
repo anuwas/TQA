@@ -21,7 +21,7 @@ public class UserDetail {
 	@JoinTable(name="user_address",
 	joinColumns=@JoinColumn(name = "user_id")
 	)
-	private Set<Address> listOfAddress = new HashSet();
+	private Set<Address> listOfAddress = new HashSet<>();
 	
 
 	public Set<Address> getListOfAddress() {

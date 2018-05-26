@@ -15,8 +15,8 @@
   <property name="hibernate.hbm2ddl.auto">create</property>
   
   
-  <mapping class="com.anu.tqa.inheritance.singletablestrategy.dto.Vehicle"/>
-  <mapping class="com.anu.tqa.inheritance.singletablestrategy.dto.TwoWheeler"/>
-  <mapping class="com.anu.tqa.inheritance.singletablestrategy.dto.FourWheeler"/>
+  <mapping class="com.anu.tqa.inheritance.dto.Vehicle"/>
+  <mapping class="com.anu.tqa.inheritance.dto.TwoWheeler"/>
+  <mapping class="com.anu.tqa.inheritance.dto.FourWheeler"/>
  </session-factory>
 </hibernate-configuration>
