@@ -12,9 +12,11 @@
   <property name="hibernate.connection.autocommit">true</property>
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.connection.pool_size">5</property>
-  <property name="hibernate.hbm2ddl.auto">update</property>
+  <property name="hibernate.hbm2ddl.auto">create</property>
   
   
-  <mapping class="com.anu.tqa.crud.dto.UserDetail"/>
+  <mapping class="com.anu.tqa.inheritance.perclassstretegy.dto.Vehicle"/>
+  <mapping class="com.anu.tqa.inheritance.perclassstretegy.dto.TwoWheeler"/>
+  <mapping class="com.anu.tqa.inheritance.perclassstretegy.dto.FourWheeler"/>
  </session-factory>
 </hibernate-configuration>
