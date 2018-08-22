@@ -1,1 +1,1 @@
-angular.module('TQAApp', ['ngRoute','appRoutes']);
+angular.module('TQAApp', ['ngRoute','appRoutes','ui.bootstrap','ngAnimate','QbanksCtrl']);

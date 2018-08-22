@@ -1,5 +1,5 @@
 angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-
+	$locationProvider.hashPrefix('');
 	$routeProvider
 
 		// home page
@@ -293,6 +293,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		})
 		.when('/misliqa-shallow-clone-vs-deep-clone', {
 			templateUrl: 'pages/mislinious/shallow_clone_vs_deep_clone.html',
+		})
+		.when('/qbank-multithreading', {
+			templateUrl: 'pages/qbank/index.html',
+			controller:'QbankController',
 		})
 		.when('/client', {
 			templateUrl: 'views/client.html',
