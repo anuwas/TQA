@@ -5,7 +5,7 @@
       },
       {
         "question": "Can volatile make a non-atomic operation to atomic?",
-        "answer": "This another good question I love to ask on volatile, mostly as a follow-up of the previous question. This question is also not easy to answer because volatile is not about atomicity, but there are cases where you can use a volatile variable to make the operation atomic.</br> One example I have seen is having a long field in your class. If you know that a long field is accessed by more than one thread e.g. a counter, a price field or anything, you better make it volatile. Why? because reading to a long variable is not atomic in Java and done in two steps, If one thread is writing or updating long value, it's possible for another thread to see half value (fist 32-bit). While reading/writing a volatile long or double (64 bit) is atomic."
+        "answer": "This another good question I love to ask on volatile, mostly as a follow-up of the previous question. This question is also not easy to answer because volatile is not about atomicity, but there are cases where you can use a volatile variable to make the operation atomic.\n\n One example I have seen is having a long field in your class. If you know that a long field is accessed by more than one thread e.g. a counter, a price field or anything, you better make it volatile. Why? because reading to a long variable is not atomic in Java and done in two steps, If one thread is writing or updating long value, it's possible for another thread to see half value (fist 32-bit). While reading/writing a volatile long or double (64 bit) is atomic."
       },
       {
         "question": "What are practical uses of volatile modifier?",
@@ -62,6 +62,12 @@
       {
         "question": "Can we create an Immutable object, which contains a mutable object?",
         "answer": "Yes, its possible to create an Immutable object which may contain a mutable object, you just need to be a little bit careful not to share the reference of the mutable component, instead, you should return a copy of it if you have to. Most common example is an Object which contain the reference of java.util.Date object."
+      }
+],
+"datatypesandbasic":[
+	 {
+        "question": "What is the right data type to represent a price in Java?",
+        "answer": "BigDecimal if memory is not a concern and Performance is not critical, otherwise double with predefined precision."
       }
 ]}
 

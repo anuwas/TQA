@@ -1,4 +1,9 @@
 <!-- Content Header (Page header) -->
+<style type="text/css">
+  .angular-with-newlines {
+    white-space: pre-wrap;
+}
+</style>
     <section class="content-header">
       <h1>
         QB
@@ -20,7 +25,9 @@
           <div>
   <uib-accordion close-others="oneAtATime">
     <div uib-accordion-group class="panel-default" heading="{{group.question}}" ng-repeat="group in groups">
-      {{group.answer}}
+      <div class="angular-with-newlines">
+        {{group.answer}}
+    </div>
     </div>
   </uib-accordion>
 </div>

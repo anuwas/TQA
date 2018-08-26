@@ -298,6 +298,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'pages/qbank/index.html',
 			controller:'QbankController',
 		})
+		.when('/qbank-datatype',{
+			templateUrl: 'pages/qbank/index.html',
+			controller:'QbankController',
+		})
 		.when('/client', {
 			templateUrl: 'views/client.html',
 			controller: 'ClientController'	
