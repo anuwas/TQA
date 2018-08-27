@@ -177,6 +177,312 @@
       {
         "question": "What is the difference between JRE, JDK, JVM and JIT?",
         "answer": "JRE stands for Java run-time and it's required to run Java application. JDK stands for Java development kit and provides tools to develop Java program e.g. Java compiler. It also contains JRE. The JVM stands for Java virtual machine and it's the process responsible for running Java application. The JIT stands for Just In Time compilation and helps to boost the performance of Java application by converting Java byte code into native code when the crossed certain threshold i.e. mainly hot code is converted into native code."
+      },
+      {
+      	"question":"Explain Java Heap space and Garbage collection?",
+      	"answer":"When a Java process is started using java command, memory is allocated to it. Part of this memory is used to create heap space, which is used to allocate memory to objects whenever they are created in the program. Garbage collection is the process inside JVM which reclaims memory from dead objects for future allocation."
+      },
+      {
+      	"question":"Can you guarantee the garbage collection process?",
+      	"answer":"No, you cannot guarantee the garbage collection, though you can make a request using System.gc() or Runtime.gc() method."
+      },
+      {
+      	"question":"How do you find memory usage from Java program? How much percent of the heap is used?",
+      	"answer":"You can use memory related methods from java.lang.Runtime class to get the free memory, total memory and maximum heap memory in Java.  By using these methods, you can find out how many percents of the heap is used and how much heap space is remaining. Runtime.freeMemory() return amount of free memory in bytes, Runtime.totalMemory() returns total memory in bytes and Runtime.maxMemory() returns maximum memory in bytes."
+      },
+      {
+      	"question":"What is the difference between stack and heap in Java?",
+      	"answer":"Stack and heap are different memory areas in the JVM and they are used for different purposes. The stack is used to hold method frames and local variables while objects are always allocated memory from the heap. The stack is usually much smaller than heap memory and also didn't shared between multiple threads, but heap is shared among all threads in JVM."
+      }
+],
+"basicjavainterview":[
+      {
+      	"question":"What's the difference between \"a == b\" and \"a.equals(b)\"?",
+      	"answer":"he a = b does object reference matching if both a and b are an object and only return true if both are pointing to the same object in the heap space, on the other hand, a.equals(b) is used for logical mapping and its expected from an object to override this method to provide logical equality. For example, String class overrides this equals() method so that you can compare two Strings, which are the different object but contains same letters."
+      },
+      {
+      	"question":"What is a.hashCode() used for? How is it related to a.equals(b)?",
+      	"answer":"hashCode() method returns an int hash value corresponding to an object. It's used in hash based collection classes e.g Hashtable, HashMap, LinkedHashMap and so on. It's very tightly related to equals() method. According to Java specification, two objects which are equal to each other using equals() method must have same hash code."
+      },
+      {
+      	"question":"Difference between final, finalize and finally?",
+      	"answer":"The final is a modifier which you can apply to variable, methods and classes. If you make a variable final it means its value cannot be changed once initialized. finalize is a method, which is called just before an object is a garbage collected, giving it last chance to resurrect itself, but the call to finalize is not guaranteed. finally is a keyword which is used in exception handling along with try and catch. the finally block is always executed irrespective of whether an exception is thrown from try block or not."
+      },
+      {
+      	"question":"What is a compile time constant in Java? What is the risk of using it?",
+      	"answer":"public static final variables are also known as a compile time constant, the public is optional there. They are replaced with actual values at compile time because compiler know their value up-front and also knows that it cannot be changed during run-time. One of the problem with this is that if you happened to use a public static final variable from some in-house or third party library and their value changed later than your client will still be using old value even after you deploy a new version of JARs. To avoid that, make sure you compile your program when you upgrade dependency JAR files."
+      }
+],
+"collection":[
+      {
+      	"question":"The difference between List, Set, Map, and Queue in Java?",
+      	"answer":"The list is an ordered collection which allows duplicate. It also has an implementation which provides constant time index based access, but that is not guaranteed by List interface. Set is unordered collection which"
+      },
+      {
+      	"question":"Difference between poll() and remove() method?",
+      	"answer":"Both poll() and remove() take out the object from the Queue but if poll() fails then it returns null but if remove fails it throws Exception."
+      },
+      {
+      	"question":"The difference between LinkedHashMap and PriorityQueue in Java?",
+      	"answer":"PriorityQueue guarantees that lowest or highest priority element always remain at the head of the queue, but LinkedHashMap maintains the order on which elements are inserted. When you iterate over a PriorityQueue, iterator doesn't guarantee any order but iterator of LinkedHashMap does guarantee the order on which elements are inserted."
+      },
+      {
+      	"question":"Difference between ArrayList and LinkedList in Java?",
+      	"answer":"The obvious difference between them is that ArrrayList is backed by array data structure, supprots random access and LinkedList is backed by linked list data structure and doesn't supprot random access. Accessing an element with the index is O(1) in ArrayList but its O(n) in LinkedList. See the answer for more detailed discussion."
+      },
+      {
+      	"question":"What is a couple of ways that you could sort a collection?",
+      	"answer":"You can either use the Sorted collection like TreeSet or TreeMap or you can sort using the ordered collection like a list and using Collections.sort() method."
+      },
+      {
+      	"question":"How do you print Array in Java?",
+      	"answer":"You can print an array by using the Arrays.toString() and Arrays.deepToString() method. Since array doesn't implement toString() by itself, just passing an array to System.out.println() will not print its contents but Arrays.toString() will print each element."
+      },
+      {
+      	"question":"LinkedList in Java is doubly or singly linked list?",
+      	"answer":"It's a doubly linked list, you can check the code in JDK. In Eclipse, you can use the shortcut, Ctrl + T to directly open this class in Editor."
+      },
+      {
+      	"question":"Which kind of tree is used to implement TreeMap in Java?",
+      	"answer":"A Red Black tree is used to implement TreeMap in Java."
+      },
+      {
+      	"question":"What is the difference between Hashtable and HashMap?",
+      	"answer":"There are many differences between these two classes, some of them are following:\n a) Hashtable is a legacy class and present from JDK 1, HashMap was added later. \n b) Hashtable is synchronized and slower but HashMap is not synchronized and faster.\n c) Hashtable doesn't allow null keys but HashMap allows one null key. \n See the answer for more differences between HashMap and Hashtable in Java."
+      },
+      {
+      	"question":"How HashSet works internally in Java?",
+      	"answer":"HashSet is internally implemented using an HashMap. Since a Map needs key and value, a default value is used for all keys. Similar to HashMap, HashSet doesn't allow duplicate keys and only one null key, I mean you can only store one null object in HashSet."
+      },
+      {
+      	"question":"Write code to remove elements from ArrayList while iterating?",
+      	"answer":" Key here is to check whether candidate uses ArrayList's remove() or Iterator's remove(). Here is the sample code which uses right way o remove elements from ArrayList while looping over and avoids ConcurrentModificationException."
+      },
+      {
+      	"question":"Can I write my own container class and use it in the for-each loop?",
+      	"answer":"Yes, you can write your own container class. You need to implement the Iterable interface if you want to loop over advanced for loop in Java, though. If you implement Collection then you by default get that property."
+      },
+      {
+      	"question":"What is default size of ArrayList and HashMap in Java?",
+      	"answer":"As of Java 7 now, default size of ArrayList is 10 and default capacity of HashMap is 16, it must be power of 2. Here is code snippet from ArrayList  and HashMap class : \n  // from ArrayList.java JDK 1.7 \n private static final int DEFAULT_CAPACITY = 10;  \n //from HashMap.java JDK 7 \n static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16"
+      },
+      {
+      	"question":"Is it possible for two unequal objects to have the same hashcode?",
+      	"answer":"Yes, two unequal objects can have same hashcode that's why collision happen in a hashmap. \n the equal hashcode contract only says that two equal objects must have the same hashcode it doesn't say anything about the unequal object."
+      },
+      {
+      	"question":"Can two equal object have the different hash code?",
+      	"answer":"No, thats not possible according to hash code contract."
+      },
+      {
+      	"question":"Can we use random numbers in the hashcode() method?",
+      	"answer":"No, because hashcode of an object should be always same. See the answer to learning more about things to remember while overriding hashCode() method in Java."
+      },
+      {
+      	"question":"What is the difference between Comparator and Comparable in Java?",
+      	"answer":"The Comparable interface is used to define the  natural order of object while Comparator is used to define custom order. Comparable can be always one, but we can have multiple comparators to define customized order for objects."
+      },
+      {
+      	"question":"Why you need to override hashcode, when you override equals in Java?",
+      	"answer":"Because equals have code contract mandates to override equals and hashcode together .since many container class like HashMap or HashSet depends on hashcode and equals contract."
+      }
+],
+"bestpracticeinterview":[
+      {
+      	"question":"What best practices you follow while writing multi-threaded code in Java?",
+      	"answer":"Here are couple of best practices which I follow while writing concurrent code in Java:\n a) Always name your thread, this will help in debugging. \n b) minimize the scope of synchronization, instead of making whole method synchronized, only critical section should be synchronized. \n c) prefer volatile over synchronized if you can can. \n e) use higher level concurrency utilities instead of waitn() and notify for inter thread communication e.g. BlockingQueue, CountDownLatch and Semeaphore. \n e) Prefer concurrent collection over synchronized collection in Java. They provide better scalability."
+      },
+      {
+      	"question":"Tell me few best practices you apply while using Collections in Java?",
+      	"answer":"Here are couple of best practices I follow while using Collectionc classes from Java:\n a) Always use the right collection e.g. if you need non-synchronized list then use ArrayList and not Vector. \n b) Prefer concurrent collection over synchronized collection because they are more scalable. \n c) Always use interface to a represent and access a collection e.g. use List to store ArrayList, Map to store HashMap and so on. \n d) Use iterator to loop over collection. \n e) Always use generics with collection."
+      },
+      {
+      	"question":"Can you tell us at least 5 best practice you use while using threads in Java?", 
+      	"answer":"This is similar to the previous question and you can use the answer given there. Particularly with thread, you should:\n a) name your thread \n b) keep your task and thread separate, use Runnable or Callable with thread pool executor. \n c) use thread pool \n d) use volatile to indicate compiler about ordering, visibility, and atomicity. \n e) avoid thread local variable because incorrect use of ThreadLocal class in Java can create a memory leak. \n Look there are many best practices and I give extra points to the developer which bring something new, something even I don't know. I make sure to ask this question to Java developers of 8 to 10 years of experience just to gauge his hands on experience and knowledge."
+      },
+      {
+      	"question":"Name 5 IO best practices?",
+      	"answer":"IO is very important for performance of your Java application. Ideally you should avoid IO in critical path of your application. Here are couple of Java IO best practices you can follow: \n a) Use buffered IO classes instead of reading individual bytes and char. \n b) Use classes from NIO and NIO2 \n c) Always close streams in finally block or use try-with-resource statements. \n d) use memory mapped file for faster IO. \n If a Java candidate doesn't know about IO and NIO, especially if he has at least 2 to 4 years of experience, he needs some reading."
+      },
+      {
+      	"question":"Name 5 JDBC best practices your follow?",
+      	"answer":"Another good Java best practices for experienced Java developer of 7 to 8 years experience. Why it's important? because they are the ones which set the trend in the code and educate junior developers. There are many best practices and you can name as per your confort and conviniece. Here are some of the more common ones: \n a) use batch statement for inserting and updating data. \n b) use PreparedStatement to avoid SQL exception and better performance. \n c) use database connection pool \n d) access resultset using column name instead of column indexes. \n e) Don't generate dynamic SQL by concatenating String with user input."
+      },
+      {
+      	"question":"Name couple of method overloading best practices in Java?",
+      	"answer":"Here are some best practices you can follow while overloading a method in Java to avoid confusion with auto-boxing: \n a) Don't overload method where one accepts int and other accepts Integer. \n b) Don't overload method where number of argument is same and only order of argument is different. \n c) Use varargs after overloaded methods has more than 5 arguments."
+      }
+],
+"unittesting":[
+      {
+      	"question":"How do you test static method?",
+      	"answer":"You can use PowerMock library to test static methods in Java."
+      },
+      {
+      	"question":"How to do you test a method for an exception using JUnit?",
+      	"answer":""
+      },
+      {
+      	"question":"Which unit testing libraries you have used for testing Java programs? ",
+      	"answer":""
+      },
+      {
+      	"question":"What is the difference between @Before and @BeforeClass annotation?",
+      	"answer":""
+      }
+],
+"datetime":[
+      {
+      	"question":"Does SimpleDateFormat is safe to use in the multi-threaded program?",
+      	"answer":"No, unfortunately, DateFormat and all its implementations including SimpleDateFormat is not thread-safe, hence should not be used in the multi-threaded program until external thread-safety measures are applied e.g. confining SimpleDateFormat object into a ThreadLocal variable. If you don't do that, you will get an incorrect result while parsing or formatting dates in Java. Though, for all practical date time purpose, I highly recommend joda-time library."
+      },
+      {
+      	"question":"How do you format a date in Java? e.g. in the ddMMyyyy format?",
+      	"answer":"You can either use SimpleDateFormat class or joda-time library to format date in Java. DateFormat class allows you to format date on many popular formats. Please see the answer for code samples to format date into different formats e.g. dd-MM-yyyy or ddMMyyyy."
+      },
+      {
+      	"question":"How do you show timezone in formatted date in Java?",
+      	"answer":""
+      },
+      {
+      	"question":"The difference between java.util.Date and java.sql.Date in Java?",
+      	"answer":""
+      },
+      {
+      	"question":"How to you calculate the difference between two dates in Java?",
+      	"answer":""
+      },
+      {
+      	"question":"How do you convert a String(YYYYMMDD) to date in Java?",
+      	"answer":""
+      }
+],
+"programingandcoading":[
+      {
+      	"question":"What is the interface? Why you use it if you cannot write anything concrete on it?",
+      	"answer":"The interface is used to define API. It tells about the contract your classes will follow. It also supports abstraction because a client can use interface method to leverage multiple implementations e.g. by using List interface you can take advantage of random access of ArrayList as well as flexible insertion and deletion of LinkedList. The interface doesn't allow you to write code to keep things abstract but from Java 8 you can declare static and default methods inside interface which are concrete."
+      },
+      {
+      	"question":"The difference between abstract class and interface in Java?",
+      	"answer":"There are multiple differences between abstract class and interface in Java, but the most important one is Java's restriction on allowing a class to extend just one class but allows it to implement multiple interfaces. An abstract class is good to define default behavior for a family of class, but the interface is good to define Type which is later used to leverage Polymorphism. Please check the answer for a more thorough discussion of this question."
+      },
+      {
+      	"question":"Which design pattern have you used in your production code? apart from Singleton?",
+      	"answer":"This is something you can answer from your experience. You can generally say about dependency injection, factory pattern, decorator pattern or observer pattern, whichever you have used. Though be prepared to answer follow-up question based upon the pattern you choose."
+      },
+      {
+      	"question":"Can you explain Liskov Substitution principle?",
+      	"answer":"This is one of the toughest questions I have asked in Java interviews. Out of 50 candidates, I have almost asked only 5 have managed to answer it. I am not posting an answer to this question as I like you to do some research, practice and spend some time to understand this confusing principle well."
+      },
+      {
+      	"question":"What is Law of Demeter violation? Why it matters?",
+      	"answer":"Believe it or not, Java is all about application programming and structuring code. If  you have good knowledge of common coding best practices, patterns and what not to do than only you can write quality code.  Law of Demeter suggests you \"talk to friends and not stranger\", hence used to reduce coupling between classes."
+      },
+      {
+      	"question":"What is Adapter pattern? When to use it?",
+      	"answer":"Another frequently asked Java design pattern questions. It provides interface conversion. If your client is using some interface but you have something else, you can write an Adapter to bridge them together. This is good for Java software engineer having 2 to 3 years experience because the question is neither difficult nor tricky but requires knowledge of OOP design patterns."
+      },
+      {
+      	"question":"What is \"dependency injection\" and \"inversion of control\"? Why would someone use it?",
+      	"answer":""
+      },
+      {
+      	"question":"What is an abstract class? How is it different from an interface? Why would you use it?",
+      	"answer":"One more classic question from Programming Job interviews, it is as old as chuck Norris. An abstract class is a class which can have state, code and implementation, but an interface is a contract which is totally abstract. Since I have answered it many times, I am only giving you the gist here but you should read the article linked to answer to learn this useful concept in much more detail."
+      },
+      {
+      	"question":"Which one is better constructor injection or setter dependency injection?",
+      	"answer":"Each has their own advantage and disadvantage. Constructor injection guaranteed that class will be initialized with all its dependency, but setter injection provides flexibility to set an optional dependency. Setter injection is also more readable if you are using an XML file to describe dependency. Rule of thumb is to use constructor injection for mandatory dependency and use setter injection for optional dependency."
+      },
+      {
+      	"question":"What is difference between dependency injection and factory design pattern?",
+      	"answer":"Though both patterns help to take out object creation part from application logic, use of dependency injection results in cleaner code than factory pattern. By using dependency injection, your classes are nothing but POJO which only knows about dependency but doesn't care how they are acquired. In the case of factory pattern, the class also needs to know about factory to acquire dependency. hence, DI results in more testable classes than factory pattern. Please see the answer for a more detailed discussion on this topic."
+      },
+      {
+      	"question":"Difference between Adapter and Decorator pattern?",
+      	"answer":"Though the structure of Adapter and Decorator pattern is similar, the difference comes on the intent of each pattern. The adapter pattern is used to bridge the gap between two interfaces, but Decorator pattern is used to add new functionality into the class without the modifying existing code."
+      },
+      {
+      	"question":"Difference between Adapter and Proxy Pattern?",
+      	"answer":"Similar to the previous question, the difference between Adapter and Proxy patterns is in their intent. Since both Adapter and Proxy pattern encapsulate the class which actually does the job, hence result in the same structure, but Adapter pattern is used for interface conversion while the Proxy pattern is used to add an extra level of indirection to support distribute, controlled or intelligent access."
+      },
+      {
+      	"question":"What is Template method pattern?",
+      	"answer":"Template pattern provides an outline of an algorithm and lets you configure or customize its steps. For examples, you can view a sorting algorithm as a template to sort object. It defines steps for sorting but let you configure how to compare them using Comparable or something similar in another language. The method which outlines the algorithms is also known as template method."
+      },
+      {
+      	"question":"When do you use Visitor design pattern?",
+      	"answer":"The visitor pattern is a solution of problem where you need to add operation on a class hierarchy but without touching them. This pattern uses double dispatch to add another level of indirection."
+      },
+      {
+      	"question":"When do you use Composite design pattern?",
+      	"answer":"Composite design pattern arranges objects into tree structures to represent part-whole hierarchies. It allows clients treat individual objects and container of objects uniformly. Use Composite pattern when you want to represent part-whole hierarchies of objects."
+      },
+      {
+      	"question":"The difference between Inheritance and Composition?",
+      	"answer":"Though both allows code reuse, Composition is more flexible than Inheritance because it allows you to switch to another implementation at run-time. Code written using Composition is also easier to test than code involving inheritance hierarchies."
+      },
+      {
+      	"question":"Describe overloading and overriding in Java?",
+      	"answer":"Both overloading and overriding allow you to write two methods of different functionality but with the same name, but overloading is compile time activity while overriding is run-time activity. Though you can overload a method in the same class, but you can only override a method in child classes. Inheritance is necessary for overriding."
+      },
+      {
+      	"question":"The difference between nested public static class and a top level class in Java?",
+      	"answer":"You can have more than one nested public static class inside one class, but you can only have one top-level public class in a Java source file and its name must be same as the name of Java source file."
+      },
+      {
+      	"question":"Difference between Composition, Aggregation and Association in OOP?",
+      	"answer":"If two objects are related to each other, they are said to be associated with each other. Composition and Aggregation are two forms of association in object-oriented programming. The composition is stronger association than Aggregation. In Composition, one object is OWNER of another object while in Aggregation one object is just USER of another object. If an object A is composed of object B then B doesn't exist if A ceased to exists, but if object A is just an aggregation of object B then B can exists even if A ceased to exist."
+      },
+      {
+      	"question":"Give me an example of design pattern which is based upon open closed principle?",
+      	"answer":"This is one of the practical questions I ask experienced Java programmer. I expect them to know about OOP design principles as well as patterns. Open closed design principle asserts that your code should be open for extension but closed for modification. Which means if you want to add new functionality, you can add it easily using the new code but without touching already tried and tested code.  There are several design patterns which are based upon open closed design principle e.g. Strategy pattern if you need a new strategy, just implement the interface and configure, no need to modify core logic. One working example is Collections.sort() method which is based on Strategy pattern and follows the open-closed principle, you don't modify sort() method to sort a new object, what you do is just implement Comparator in your own way."
+      },
+      {
+      	"question":"Difference between Abstract factory and Prototype design pattern?",
+      	"answer":"This is the practice question for you, If you are feeling bored just reading and itching to write something, why not write the answer to this question. I would love to see an example the, which should answer where you should use the Abstract factory pattern and where is the Prototype pattern is more suitable."
+      },
+      {
+      	"question":"When do you use Flyweight pattern?",
+      	"answer":"This is another popular question from the design pattern. Many Java developers with 4 to 6 years of experience know the definition but failed to give any concrete example. Since many of you might not have used this pattern, it's better to look examples from JDK. You are more likely have used them before and they are easy to remember as well. Now let's see the answer. \n Flyweight pattern allows you to share object to support large numbers without actually creating too many objects. In order to use Flyweight pattern, you need to make your object Immutable so that they can be safely shared. String pool and pool of Integer and Long object in JDK are good examples of Flyweight pattern."
+      }
+],
+"mislinious":[
+      {
+      	"question":"The difference between nested static class and top level class?",
+      	"answer":"One of the fundamental questions from Java basics. I ask this question only to junior Java developers of 1 to 2 years of experience as it's too easy for an experience Java programmers. The answer is simple, a public top level class must have the same name as the name of the source file, there is no such requirement for nested static class. A nested class is always inside a top level class and you need to use the name of the top-level class to refer nested static class e.g. HashMap.Entry is a nested static class, where HashMap is a top level class and Entry is nested static class."
+      },
+      {
+      	"question":"Can you write a regular expression to check if String is a number?",
+      	"answer":"If you are taking Java interviews then you should ask at least one question on the regular expression. This clearly differentiates an average programmer with a good programmer. Since one of the traits of a good developer is to know tools, regex is the best tool for searching something in the log file, preparing reports etc. Anyway, answer to this question is, a numeric String can only contain digits i.e. 0 to 9 and + and - sign that too at start of the String, by using this information you can write following regular expression to check if given String is number or not"
+      },
+      {
+      	"question":"The difference between checked and unchecked Exception in Java?",
+      	"answer":"checked exception is checked by the compiler at compile time. It's mandatory for a method to either handle the checked exception or declare them in their throws clause. These are the ones which are a sub class of Exception but doesn't descend from RuntimeException. The unchecked exception is the descendant of RuntimeException and not checked by the compiler at compile time. This question is now becoming less popular and you would only find this with interviews with small companies, both investment banks and startups are moved on from this question."
+      },
+      {
+      	"question":"The difference between throw and throws in Java?",
+      	"answer":"the throw is used to actually throw an instance of java.lang.Throwable class, which means you can throw both Error and Exception using throw keyword e.g. \n throw new IllegalArgumentException(\"size must be multiple of 2\") \n On the other hand, throws is used as part of method declaration and signals which kind of exceptions are thrown by this method so that its caller can handle them. It's mandatory to declare any unhandled checked exception in throws clause in Java. Like the previous question, this is another frequently asked Java interview question from errors and exception topic but too easy to answer."
+      },
+      {
+      	"question":"The difference between Serializable and Externalizable in Java?",
+      	"answer":"This is one of the frequently asked questions from Java Serialization. The interviewer has been asking this question since the day Serialization was introduced in Java, but yet only a few good candidate can answer this question with some confidence and practical knowledge. Serializable interface is used to make Java classes serializable so that they can be transferred over network or their state can be saved on disk, but it leverages default serialization built-in JVM, which is expensive, fragile and not secure. Externalizable allows you to fully control the Serialization process, specify a custom binary format and add more security measure."
+      },
+      {
+      	"question":"The difference between DOM and SAX parser in Java?",
+      	"answer":"Another common Java question but from XML parsing topic. It's rather simple to answer and that's why many interviewers prefers to ask this question on the telephonic round. DOM parser loads the whole XML into memory to create a tree based DOM model which helps it quickly locate nodes and make a change in the structure of XML while SAX parser is an event based parser and doesn't load the whole XML into memory. Due to this reason DOM is faster than SAX but require more memory and not suitable to parse large XML files."
+      },
+      {
+      	"question":"Tell me 3 features introduced on JDK 1.7?",
+      	"answer":"This is one of the good questions I ask to check whether the candidate is aware of recent development in Java technology space or not. Even though JDK 7 was not a big bang release like JDK 5 or JDK 8, it still has a lot of good feature to count on e.g. try-with-resource statements, which free you from closing streams and resources when you are done with that, Java automatically closes that. Fork-Join pool to implement something like the Map-reduce pattern in Java. Allowing String variable and literal into switch statements. Diamond operator for improved type inference, no need to declare generic type on the right-hand side of variable declaration anymore, results in more readable and succinct code. Another worth noting feature introduced was improved exception handling e.g. allowing you to catch multiple exceptions in the same catch block."
+      },
+      {
+      	"question":"Tell me 5 features introduced in JDK 1.8?",
+      	"answer":"This is the follow-up question of the previous one. Java 8 is path breaking release in Java's history, here are the top 5 features from JDK 8 release \n Lambda expression, which allows you pass an anonymous function as object. \n Stream API, take advantage of multiple cores of modern CPU and allows you to write succinct code. \n Date and Time API, finally you have a solid and easy to use date and time library right into JDK \n Extension methods, now you can have static and default method into your interface \n Repeated annotation, allows you apply the same annotation multiple times on a type"
+      },
+      {
+      	"question":"What is the difference between Maven and ANT in Java?",
+      	"answer":"Another great question to check the all round knowledge of Java developers. It's easy to answer questions from core Java but when you ask about setting things up, building Java artifacts, many Java software engineer struggles. Coming back to the answer of this question, Though both are build tool and used to create Java application build, Maven is much more than that. It provides standard structure for Java project based upon \"convention over configuration\" concept and automatically manage dependencies (JAR files on which your application is dependent) for Java application. Please see the answer for more differences between Maven and ANT tool."
       }
 ]}
 

@@ -1,5 +1,6 @@
 angular.module('QbanksCtrl',[]).controller('QbankController',function($scope,$http,$location,$routeParams){
 	$scope.oneAtATime = true;
+
   $scope.groups = [
     {
       question: 'Dynamic Group Header - 1',
@@ -15,6 +16,7 @@ angular.module('QbanksCtrl',[]).controller('QbankController',function($scope,$ht
   $http.get('resources/js/QBANKQ.json').
   then(function onSuccess(response) {
     $scope.groups=response.data[$routeParams.param];
+    $scope.grouptitle=$routeParams.param;
   	/*switch($location.url()){
   		case '/qbank-multithreading':
   		$scope.groups=response.data.multithreading;
