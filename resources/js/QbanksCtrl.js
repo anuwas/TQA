@@ -1,4 +1,4 @@
-angular.module('QbanksCtrl',[]).controller('QbankController',function($scope,$http,$location){
+angular.module('QbanksCtrl',[]).controller('QbankController',function($scope,$http,$location,$routeParams){
 	$scope.oneAtATime = true;
   $scope.groups = [
     {
@@ -14,14 +14,15 @@ angular.module('QbanksCtrl',[]).controller('QbankController',function($scope,$ht
   
   $http.get('resources/js/QBANKQ.json').
   then(function onSuccess(response) {
-  	switch($location.url()){
+    $scope.groups=response.data[$routeParams.param];
+  	/*switch($location.url()){
   		case '/qbank-multithreading':
   		$scope.groups=response.data.multithreading;
   		break;
   		case '/qbank-datatype':
   		$scope.groups=response.data.datatypesandbasic;
   		break;
-  	}
+  	}*/
      
      //console.log(response.data.multithreading);
   }).

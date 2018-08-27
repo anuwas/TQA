@@ -10,7 +10,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'pages/java7/switch_on_string.html',
 		})
 		.when('/java7bineryleteralwithprefix', {
-			templateUrl: 'pages/java7//binary_leteral_with_prefix.html',
+			templateUrl: 'pages/java7/binary_leteral_with_prefix.html',
 		})
 		.when('/java7underscoreonnumericleteral', {
 			templateUrl: 'pages/java7/underscore_on_numeric_leteral.html',
@@ -294,11 +294,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/misliqa-shallow-clone-vs-deep-clone', {
 			templateUrl: 'pages/mislinious/shallow_clone_vs_deep_clone.html',
 		})
-		.when('/qbank-multithreading', {
-			templateUrl: 'pages/qbank/index.html',
-			controller:'QbankController',
-		})
-		.when('/qbank-datatype',{
+		.when('/qbank/:param', {
 			templateUrl: 'pages/qbank/index.html',
 			controller:'QbankController',
 		})
