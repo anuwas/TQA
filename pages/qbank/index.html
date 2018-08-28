@@ -28,6 +28,9 @@
       <div class="angular-with-newlines">
         {{group.answer}}
     </div>
+        <span ng-if="group.link">
+          <a ng-href="{{group.link}}" target="_blank">more..</a>
+        </span>
     </div>
   </uib-accordion>
 </div>

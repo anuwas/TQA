@@ -13,7 +13,8 @@
       },
       {
         "question": "What guarantee volatile variable provides?",
-        "answer": "volatile variables provide the guarantee about ordering and visibility e.g. volatile assignment cannot be re-ordered with other statements but in the absence of any synchronization instruction compiler, JVM or JIT are free to reorder statements for better performance. volatile also provides the happens-before guarantee which ensures changes made in one thread is visible to others. In some cases volatile also provide atomicity e.g. reading 64-bit data types like long and double are not atomic but read of volatile double or long is atomic."
+        "answer": "volatile variables provide the guarantee about ordering and visibility e.g. volatile assignment cannot be re-ordered with other statements but in the absence of any synchronization instruction compiler, JVM or JIT are free to reorder statements for better performance. volatile also provides the happens-before guarantee which ensures changes made in one thread is visible to others. In some cases volatile also provide atomicity e.g. reading 64-bit data types like long and double are not atomic but read of volatile double or long is atomic. ",
+        "link":"http://www.java67.com/2012/08/what-is-volatile-variable-in-java-when.html"
       },
       {
         "question": "hich one would be easy to write? synchronization code for 10 threads or 2 threads?",
@@ -21,7 +22,8 @@
       },
       {
         "question": "How do you call wait() method? using if block or loop? Why?",
-        "answer": "wait() method should always be called in loop because it's possible that until thread gets CPU to start running again the condition might not hold, so it's always better to check condition in loop before proceeding. Here is the standard idiom of using wait and notify method in Java:// The standard idiom for using the wait methodsynchronized (obj) {  while (condition does not hold)      obj.wait(); // (Releases lock, and reacquires on wakeup)      ... // Perform action appropriate to condition}See Effective Java Item 69 to learn more about why wait method should call in the loop."
+        "answer": "wait() method should always be called in loop because it's possible that until thread gets CPU to start running again the condition might not hold, so it's always better to check condition in loop before proceeding. Here is the standard idiom of using wait and notify method in Java:// The standard idiom for using the wait methodsynchronized (obj) {  while (condition does not hold)      obj.wait(); // (Releases lock, and reacquires on wakeup)      ... // Perform action appropriate to condition}See Effective Java Item 69 to learn more about why wait method should call in the loop.",
+        "link" : "https://javarevisited.blogspot.com/2015/07/how-to-use-wait-notify-and-notifyall-in.html"
       },
       {
         "question": "What is false sharing in the context of multi-threading? ",
@@ -37,27 +39,33 @@
       },
       {
         "question": "is Swing thread-safe?",
-        "answer": "No, Swing is not thread-safe. You cannot update Swing components e.g. JTable, JList or JPanel from any thread, in fact, they must be updated from GUI or AWT thread. That's why swings provide invokeAndWait() and invokeLater() method to request GUI update from any other threads. This methods put update request in AWT threads queue and can wait till update or return immediately for an asynchronous update. You can also check the detailed answer to learn more."
+        "answer": "No, Swing is not thread-safe. You cannot update Swing components e.g. JTable, JList or JPanel from any thread, in fact, they must be updated from GUI or AWT thread. That's why swings provide invokeAndWait() and invokeLater() method to request GUI update from any other threads. This methods put update request in AWT threads queue and can wait till update or return immediately for an asynchronous update. You can also check the detailed answer to learn more.",
+        "link" : "http://javarevisited.blogspot.sg/2013/08/why-swing-is-not-thread-safe-in-java-Swingworker-Event-thread.html"
       },
       {
         "question": "What is a thread local variable in Java?",
-        "answer": "Thread-local variables are variables confined to a thread, its like thread's own copy which is not shared between multiple threads. Java provides a ThreadLocal class to support thread-local variables. It's one of the many ways to achieve thread-safety. Though be careful while using thread local variable in manged environment e.g. with web servers where worker thread out lives any application variable. Any thread local variable which is not removed once its work is done can potentially cause a memory leak in Java application."
+        "answer": "Thread-local variables are variables confined to a thread, its like thread's own copy which is not shared between multiple threads. Java provides a ThreadLocal class to support thread-local variables. It's one of the many ways to achieve thread-safety. Though be careful while using thread local variable in manged environment e.g. with web servers where worker thread out lives any application variable. Any thread local variable which is not removed once its work is done can potentially cause a memory leak in Java application.",
+        "link" : "http://javarevisited.blogspot.sg/2012/05/how-to-use-threadlocal-in-java-benefits.html"
       },
        {
         "question": "Write wait-notify code for producer-consumer problem? ",
-        "answer": "Please see the answer for a code example. Just remember to call wait() and notify() method from synchronized block and test waiting for condition on the loop instead of if block."
+        "answer": "Please see the answer for a code example. Just remember to call wait() and notify() method from synchronized block and test waiting for condition on the loop instead of if block.",
+        "link" : "http://www.java67.com/2012/12/producer-consumer-problem-with-wait-and-notify-example.html"
       },
       {
         "question": "Write code for thread-safe Singleton in Java?",
-        "answer": "Please see the answer for a code example and step by step guide to creating thread-safe singleton class in Java. When we say thread-safe, which means Singleton should remain singleton even if initialization occurs in the case of multiple threads. Using Java enum as Singleton class is one of the easiest ways to create a thread-safe singleton in Java."
+        "answer": "Please see the answer for a code example and step by step guide to creating thread-safe singleton class in Java. When we say thread-safe, which means Singleton should remain singleton even if initialization occurs in the case of multiple threads. Using Java enum as Singleton class is one of the easiest ways to create a thread-safe singleton in Java.",
+        "link" : "https://javarevisited.blogspot.com/2012/12/how-to-create-thread-safe-singleton-in-java-example.html"
       },
       {
         "question": "The difference between sleep and wait in Java?",
-        "answer": "Though both are used to pause currently running thread, sleep() is actually meant for short pause because it doesn't release lock, while wait() is meant for conditional wait and that's why it release lock which can then be acquired by another thread to change the condition on which it is waiting."
+        "answer": "Though both are used to pause currently running thread, sleep() is actually meant for short pause because it doesn't release lock, while wait() is meant for conditional wait and that's why it release lock which can then be acquired by another thread to change the condition on which it is waiting.",
+        "link" : "http://www.java67.com/2012/08/what-are-difference-between-wait-and.html"
       },
       {
         "question": "What is an immutable object? How do you create an Immutable object in Java?",
-        "answer": "Immutable objects are those whose state cannot be changed once created. Any modification will result in a new object e.g. String, Integer, and other wrapper class. Please see the answer for step by step guide to creating Immutable class in Java."
+        "answer": "Immutable objects are those whose state cannot be changed once created. Any modification will result in a new object e.g. String, Integer, and other wrapper class. Please see the answer for step by step guide to creating Immutable class in Java.",
+        "link" : "https://javarevisited.blogspot.com/2013/03/how-to-create-immutable-class-object-java-example-tutorial.html"
       },
       {
         "question": "Can we create an Immutable object, which contains a mutable object?",
@@ -67,11 +75,13 @@
 "datatypesandbasic":[
 	   {
         "question": "What is the right data type to represent a price in Java?",
-        "answer": "BigDecimal if memory is not a concern and Performance is not critical, otherwise double with predefined precision."
+        "answer": "BigDecimal if memory is not a concern and Performance is not critical, otherwise double with predefined precision.",
+        "link" : "https://javarevisited.blogspot.com/2012/02/java-mistake-1-using-float-and-double.html"
       },
        {
         "question": "How do you convert bytes to String?",
-        "answer": "you can convert bytes to the string using string constructor which accepts byte[], just make sure that right character encoding otherwise platform's default character encoding will be used which may or may not be same."
+        "answer": "you can convert bytes to the string using string constructor which accepts byte[], just make sure that right character encoding otherwise platform's default character encoding will be used which may or may not be same.",
+        "link" : "https://javarevisited.blogspot.com/2014/08/2-examples-to-convert-byte-array-to-String-in-Java.html"
       },
       {
         "question": "How do you convert bytes to long in Java?",
@@ -85,12 +95,14 @@
       ,
       {
         "question": "There are two classes B extends A and C extends B, Can we cast B into C e.g. C = (C) B;",
-        "answer": ""
+        "answer": "",
+        "link" : "https://javarevisited.blogspot.com/2012/12/what-is-type-casting-in-java-class-interface-example.html"
       }
       ,
       {
         "question": "Which class contains clone method? Cloneable or Object?",
-        "answer": "java.lang.Cloneable is marker interface and doesn't contain any method clone method is defined in the object class. It is also knowing that clone() is a native method means it's implemented in C or C++ or any other native language."
+        "answer": "java.lang.Cloneable is marker interface and doesn't contain any method clone method is defined in the object class. It is also knowing that clone() is a native method means it's implemented in C or C++ or any other native language.",
+        "link" : "https://javarevisited.blogspot.com/2015/01/java-clone-tutorial-part-2-overriding-with-mutable-field-example.html"
       }
       ,
       {
@@ -105,7 +117,8 @@
       ,
       {
         "question": "Can I store a double value in a long variable without casting?",
-        "answer": "No, you cannot store a double value into a long variable without casting because the range of double is more  that long and you we need to type cast. It's not dificult to answer this question but many develoepr get it wrong due to confusion on which one is bigger between double and long in Java."
+        "answer": "No, you cannot store a double value into a long variable without casting because the range of double is more  that long and you we need to type cast. It's not dificult to answer this question but many develoepr get it wrong due to confusion on which one is bigger between double and long in Java.",
+        "link" : "http://www.java67.com/2014/11/how-to-convert-double-to-long-in-java-example.html"
       }
       ,
       {
@@ -120,7 +133,8 @@
       ,
       {
         "question": "Why is String Immutable in Java?",
-        "answer": "One of my favorite Java interview question. The String is Immutable in java because java designer thought that string will be heavily used and making it immutable allow some optimization easy sharing same String object between multiple clients. See the link for the more detailed answer. This is a great question for Java programmers with less experience as it gives them food for thought, to think about how things works in Java, what Jave designers might have thought when they created String class etc."
+        "answer": "One of my favorite Java interview question. The String is Immutable in java because java designer thought that string will be heavily used and making it immutable allow some optimization easy sharing same String object between multiple clients. See the link for the more detailed answer. This is a great question for Java programmers with less experience as it gives them food for thought, to think about how things works in Java, what Jave designers might have thought when they created String class etc.",
+        "link" : "http://www.java67.com/2014/01/why-string-class-has-made-immutable-or-final-java.html"
       }
       ,
       {
@@ -130,57 +144,57 @@
       ,
       {
         "question": "What is constructor chaining in Java?",
-        "answer": "When you call one constructor from other than it's known as constructor chaining in Java. This happens when you have multiple, overloaded constructor in the class."
+        "answer": "When you call one constructor from other than it's known as constructor chaining in Java. This happens when you have multiple, overloaded constructor in the class.",
+        "link" : "http://www.java67.com/2012/12/how-constructor-chaining-works-in-java.html"
       }
 ],
 "jvmgarbagecollection":[
       {
         "question": "What is the size of int in 64-bit JVM?",
         "answer": "The size of an int variable is constant in Java, it's always 32-bit irrespective of platform. Which means the size of primitive int is same in both 32-bit and 64-bit Java virtual machine."
-      }
-      ,
+      },
       {
         "question": "The difference between Serial and Parallel Garbage Collector?",
-        "answer": "Even though both the serial and parallel collectors cause a stop-the-world pause during Garbage collection. The main difference between them is that a serial collector is a default copying collector which uses only one GC thread for garbage collection while a parallel collector uses multiple GC threads for garbage collection."
-      }
-      ,
+        "answer": "Even though both the serial and parallel collectors cause a stop-the-world pause during Garbage collection. The main difference between them is that a serial collector is a default copying collector which uses only one GC thread for garbage collection while a parallel collector uses multiple GC threads for garbage collection.",
+        "link" : "https://javarevisited.blogspot.com/2011/04/garbage-collection-in-java.html"
+      },
       {
         "question": "What is the size of an int variable in 32-bit and 64-bit JVM?",
         "answer": "The size of int is same in both 32-bit and 64-bit JVM, it's always 32 bits or 4 bytes."
-      }
-      ,
+      },
       {
         "question": "A difference between WeakReference and SoftReference in Java?",
-        "answer": "Though both WeakReference and SoftReference helps garbage collector and memory efficient, WeakReference becomes eligible for garbage collection as soon as last strong reference is lost but SoftReference even thought it can not prevent GC, it can delay it until JVM absolutely need memory."
-      }
-      ,
+        "answer": "Though both WeakReference and SoftReference helps garbage collector and memory efficient, WeakReference becomes eligible for garbage collection as soon as last strong reference is lost but SoftReference even thought it can not prevent GC, it can delay it until JVM absolutely need memory.",
+        "link" : "http://javarevisited.blogspot.sg/2014/03/difference-between-weakreference-vs-softreference-phantom-strong-reference-java.html"
+      },
       {
         "question": "How do WeakHashMap works?",
         "answer": "WeakHashMap works like a normal HashMap but uses WeakReference for keys, which means if the key object doesn't have any reference then both key/value mapping will become eligible for garbage collection."
-      }
-      ,
+      },
       {
         "question": "What is -XX:+UseCompressedOops JVM option? Why use it?",
-        "answer": "When you go migrate your Java application from 32-bit to 64-bit JVM, the heap requirement suddenly increases, almost double, due to increasing size of ordinary object pointer from 32 bit to 64 bit. This also adversely affect how much data you can keep in CPU cache, which is much smaller than memory. Since main motivation for moving to 64-bit JVM is to specify large heap size, you can save some memory by using compressed OOP. By using -XX:+UseCompressedOops, JVM uses 32-bit OOP instead of 64-bit OOP."
-      }
-      ,
+        "answer": "When you go migrate your Java application from 32-bit to 64-bit JVM, the heap requirement suddenly increases, almost double, due to increasing size of ordinary object pointer from 32 bit to 64 bit. This also adversely affect how much data you can keep in CPU cache, which is much smaller than memory. Since main motivation for moving to 64-bit JVM is to specify large heap size, you can save some memory by using compressed OOP. By using -XX:+UseCompressedOops, JVM uses 32-bit OOP instead of 64-bit OOP.",
+        "link" : "https://javarevisited.blogspot.com/2012/06/what-is-xxusecompressedoops-in-64-bit.html"
+      },
       {
         "question": "How do you find if JVM is 32-bit or 64-bit from Java Program?",
-        "answer": "You can find that by checking some system properties like sun.arch.data.model or os.arch"
-      }
-      ,
+        "answer": "You can find that by checking some system properties like sun.arch.data.model or os.arch",
+        "link" : "https://javarevisited.blogspot.com/2012/01/find-jvm-is-32-or-64-bit-java-program.html"
+      },
       {
         "question": "What is the maximum heap size of 32-bit and 64-bit JVM?",
-        "answer": "Theoretically, the maximum heap memory you can assign to a 32-bit JVM is 2^32 which is 4GB but practically the limit is much smaller. It also varies between operating systems e.g. form 1.5GB in Windows to almost 3GB in Solaris. 64-bit JVM allows you to specify larger heap size, theoretically 2^64 which is quite large but practically you can specify heap space up to 100GBs. There are even JVM e.g. Azul where heap space of 1000 gigs is also possible."
-      }
-      ,
+        "answer": "Theoretically, the maximum heap memory you can assign to a 32-bit JVM is 2^32 which is 4GB but practically the limit is much smaller. It also varies between operating systems e.g. form 1.5GB in Windows to almost 3GB in Solaris. 64-bit JVM allows you to specify larger heap size, theoretically 2^64 which is quite large but practically you can specify heap space up to 100GBs. There are even JVM e.g. Azul where heap space of 1000 gigs is also possible.",
+        "link" : "https://javarevisited.blogspot.com/2013/04/what-is-maximum-heap-size-for-32-bit-64-JVM-Java-memory.html"
+      },
       {
         "question": "What is the difference between JRE, JDK, JVM and JIT?",
-        "answer": "JRE stands for Java run-time and it's required to run Java application. JDK stands for Java development kit and provides tools to develop Java program e.g. Java compiler. It also contains JRE. The JVM stands for Java virtual machine and it's the process responsible for running Java application. The JIT stands for Just In Time compilation and helps to boost the performance of Java application by converting Java byte code into native code when the crossed certain threshold i.e. mainly hot code is converted into native code."
+        "answer": "JRE stands for Java run-time and it's required to run Java application. JDK stands for Java development kit and provides tools to develop Java program e.g. Java compiler. It also contains JRE. The JVM stands for Java virtual machine and it's the process responsible for running Java application. The JIT stands for Just In Time compilation and helps to boost the performance of Java application by converting Java byte code into native code when the crossed certain threshold i.e. mainly hot code is converted into native code.",
+        "link":"https://javarevisited.blogspot.com/2011/12/jre-jvm-jdk-jit-in-java-programming.html"
       },
       {
       	"question":"Explain Java Heap space and Garbage collection?",
-      	"answer":"When a Java process is started using java command, memory is allocated to it. Part of this memory is used to create heap space, which is used to allocate memory to objects whenever they are created in the program. Garbage collection is the process inside JVM which reclaims memory from dead objects for future allocation."
+      	"answer":"When a Java process is started using java command, memory is allocated to it. Part of this memory is used to create heap space, which is used to allocate memory to objects whenever they are created in the program. Garbage collection is the process inside JVM which reclaims memory from dead objects for future allocation.",
+      	"link" : "https://javarevisited.blogspot.com/2011/05/java-heap-space-memory-size-jvm.html"
       },
       {
       	"question":"Can you guarantee the garbage collection process?",
@@ -192,21 +206,25 @@
       },
       {
       	"question":"What is the difference between stack and heap in Java?",
-      	"answer":"Stack and heap are different memory areas in the JVM and they are used for different purposes. The stack is used to hold method frames and local variables while objects are always allocated memory from the heap. The stack is usually much smaller than heap memory and also didn't shared between multiple threads, but heap is shared among all threads in JVM."
+      	"answer":"Stack and heap are different memory areas in the JVM and they are used for different purposes. The stack is used to hold method frames and local variables while objects are always allocated memory from the heap. The stack is usually much smaller than heap memory and also didn't shared between multiple threads, but heap is shared among all threads in JVM.",
+      	"link" : "https://javarevisited.blogspot.com/2013/01/difference-between-stack-and-heap-java.html"
       }
 ],
 "basicjavainterview":[
       {
       	"question":"What's the difference between \"a == b\" and \"a.equals(b)\"?",
-      	"answer":"he a = b does object reference matching if both a and b are an object and only return true if both are pointing to the same object in the heap space, on the other hand, a.equals(b) is used for logical mapping and its expected from an object to override this method to provide logical equality. For example, String class overrides this equals() method so that you can compare two Strings, which are the different object but contains same letters."
+      	"answer":"he a = b does object reference matching if both a and b are an object and only return true if both are pointing to the same object in the heap space, on the other hand, a.equals(b) is used for logical mapping and its expected from an object to override this method to provide logical equality. For example, String class overrides this equals() method so that you can compare two Strings, which are the different object but contains same letters.",
+      	"link" : "https://javarevisited.blogspot.com/2012/12/difference-between-equals-method-and-equality-operator-java.html"
       },
       {
       	"question":"What is a.hashCode() used for? How is it related to a.equals(b)?",
-      	"answer":"hashCode() method returns an int hash value corresponding to an object. It's used in hash based collection classes e.g Hashtable, HashMap, LinkedHashMap and so on. It's very tightly related to equals() method. According to Java specification, two objects which are equal to each other using equals() method must have same hash code."
+      	"answer":"hashCode() method returns an int hash value corresponding to an object. It's used in hash based collection classes e.g Hashtable, HashMap, LinkedHashMap and so on. It's very tightly related to equals() method. According to Java specification, two objects which are equal to each other using equals() method must have same hash code.",
+      	"link" : "https://javarevisited.blogspot.com/2011/10/override-hashcode-in-java-example.html"
       },
       {
       	"question":"Difference between final, finalize and finally?",
-      	"answer":"The final is a modifier which you can apply to variable, methods and classes. If you make a variable final it means its value cannot be changed once initialized. finalize is a method, which is called just before an object is a garbage collected, giving it last chance to resurrect itself, but the call to finalize is not guaranteed. finally is a keyword which is used in exception handling along with try and catch. the finally block is always executed irrespective of whether an exception is thrown from try block or not."
+      	"answer":"The final is a modifier which you can apply to variable, methods and classes. If you make a variable final it means its value cannot be changed once initialized. finalize is a method, which is called just before an object is a garbage collected, giving it last chance to resurrect itself, but the call to finalize is not guaranteed. finally is a keyword which is used in exception handling along with try and catch. the finally block is always executed irrespective of whether an exception is thrown from try block or not.",
+      	"link" : "https://javarevisited.blogspot.com/2012/11/difference-between-final-finally-and-finalize-java.html"
       },
       {
       	"question":"What is a compile time constant in Java? What is the risk of using it?",
@@ -216,7 +234,8 @@
 "collection":[
       {
       	"question":"The difference between List, Set, Map, and Queue in Java?",
-      	"answer":"The list is an ordered collection which allows duplicate. It also has an implementation which provides constant time index based access, but that is not guaranteed by List interface. Set is unordered collection which"
+      	"answer":"The list is an ordered collection which allows duplicate. It also has an implementation which provides constant time index based access, but that is not guaranteed by List interface. Set is unordered collection which",
+      	"link" : "http://www.java67.com/2013/01/difference-between-set-list-and-map-in-java.html"
       },
       {
       	"question":"Difference between poll() and remove() method?",
@@ -224,19 +243,23 @@
       },
       {
       	"question":"The difference between LinkedHashMap and PriorityQueue in Java?",
-      	"answer":"PriorityQueue guarantees that lowest or highest priority element always remain at the head of the queue, but LinkedHashMap maintains the order on which elements are inserted. When you iterate over a PriorityQueue, iterator doesn't guarantee any order but iterator of LinkedHashMap does guarantee the order on which elements are inserted."
+      	"answer":"PriorityQueue guarantees that lowest or highest priority element always remain at the head of the queue, but LinkedHashMap maintains the order on which elements are inserted. When you iterate over a PriorityQueue, iterator doesn't guarantee any order but iterator of LinkedHashMap does guarantee the order on which elements are inserted.",
+      	"link": "https://javarevisited.blogspot.com/2013/10/what-is-priorityqueue-data-structure-java-example-tutorial.html"
       },
       {
       	"question":"Difference between ArrayList and LinkedList in Java?",
-      	"answer":"The obvious difference between them is that ArrrayList is backed by array data structure, supprots random access and LinkedList is backed by linked list data structure and doesn't supprot random access. Accessing an element with the index is O(1) in ArrayList but its O(n) in LinkedList. See the answer for more detailed discussion."
+      	"answer":"The obvious difference between them is that ArrrayList is backed by array data structure, supprots random access and LinkedList is backed by linked list data structure and doesn't supprot random access. Accessing an element with the index is O(1) in ArrayList but its O(n) in LinkedList. See the answer for more detailed discussion.",
+      	"link" : "http://www.java67.com/2012/12/difference-between-arraylist-vs-LinkedList-java.html"
       },
       {
       	"question":"What is a couple of ways that you could sort a collection?",
-      	"answer":"You can either use the Sorted collection like TreeSet or TreeMap or you can sort using the ordered collection like a list and using Collections.sort() method."
+      	"answer":"You can either use the Sorted collection like TreeSet or TreeMap or you can sort using the ordered collection like a list and using Collections.sort() method.",
+      	"link" : "http://www.java67.com/2012/07/sort-list-ascending-descending-order-set-arraylist.html"
       },
       {
       	"question":"How do you print Array in Java?",
-      	"answer":"You can print an array by using the Arrays.toString() and Arrays.deepToString() method. Since array doesn't implement toString() by itself, just passing an array to System.out.println() will not print its contents but Arrays.toString() will print each element."
+      	"answer":"You can print an array by using the Arrays.toString() and Arrays.deepToString() method. Since array doesn't implement toString() by itself, just passing an array to System.out.println() will not print its contents but Arrays.toString() will print each element.",
+      	"link":"http://www.java67.com/2014/03/how-to-print-array-in-java-example-tutorial.html"
       },
       {
       	"question":"LinkedList in Java is doubly or singly linked list?",
@@ -248,15 +271,18 @@
       },
       {
       	"question":"What is the difference between Hashtable and HashMap?",
-      	"answer":"There are many differences between these two classes, some of them are following:\n a) Hashtable is a legacy class and present from JDK 1, HashMap was added later. \n b) Hashtable is synchronized and slower but HashMap is not synchronized and faster.\n c) Hashtable doesn't allow null keys but HashMap allows one null key. \n See the answer for more differences between HashMap and Hashtable in Java."
+      	"answer":"There are many differences between these two classes, some of them are following:\n a) Hashtable is a legacy class and present from JDK 1, HashMap was added later. \n b) Hashtable is synchronized and slower but HashMap is not synchronized and faster.\n c) Hashtable doesn't allow null keys but HashMap allows one null key. \n See the answer for more differences between HashMap and Hashtable in Java.",
+      	"link":"http://www.java67.com/2012/08/5-difference-between-hashtable-hashmap-Java-collection.html"
       },
       {
       	"question":"How HashSet works internally in Java?",
-      	"answer":"HashSet is internally implemented using an HashMap. Since a Map needs key and value, a default value is used for all keys. Similar to HashMap, HashSet doesn't allow duplicate keys and only one null key, I mean you can only store one null object in HashSet."
+      	"answer":"HashSet is internally implemented using an HashMap. Since a Map needs key and value, a default value is used for all keys. Similar to HashMap, HashSet doesn't allow duplicate keys and only one null key, I mean you can only store one null object in HashSet.",
+      	"link" : "http://www.java67.com/2014/01/how-hashset-is-implemented-or-works-internally-java.html"
       },
       {
       	"question":"Write code to remove elements from ArrayList while iterating?",
-      	"answer":" Key here is to check whether candidate uses ArrayList's remove() or Iterator's remove(). Here is the sample code which uses right way o remove elements from ArrayList while looping over and avoids ConcurrentModificationException."
+      	"answer":" Key here is to check whether candidate uses ArrayList's remove() or Iterator's remove(). Here is the sample code which uses right way o remove elements from ArrayList while looping over and avoids ConcurrentModificationException.",
+      	"link" : "http://javarevisited.blogspot.sg/2014/01/ow-to-remove-objects-from-collection-arraylist-java-iterator-traversing.html"
       },
       {
       	"question":"Can I write my own container class and use it in the for-each loop?",
@@ -264,7 +290,8 @@
       },
       {
       	"question":"What is default size of ArrayList and HashMap in Java?",
-      	"answer":"As of Java 7 now, default size of ArrayList is 10 and default capacity of HashMap is 16, it must be power of 2. Here is code snippet from ArrayList  and HashMap class : \n  // from ArrayList.java JDK 1.7 \n private static final int DEFAULT_CAPACITY = 10;  \n //from HashMap.java JDK 7 \n static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16"
+      	"answer":"As of Java 7 now, default size of ArrayList is 10 and default capacity of HashMap is 16, it must be power of 2. Here is code snippet from ArrayList  and HashMap class : \n  // from ArrayList.java JDK 1.7 \n private static final int DEFAULT_CAPACITY = 10;  \n //from HashMap.java JDK 7 \n static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16",
+      	"link" : "https://javarevisited.blogspot.com/2014/07/java-optimization-empty-arraylist-and-Hashmap-cost-less-memory-jdk-17040-update.html"
       },
       {
       	"question":"Is it possible for two unequal objects to have the same hashcode?",
@@ -276,15 +303,18 @@
       },
       {
       	"question":"Can we use random numbers in the hashcode() method?",
-      	"answer":"No, because hashcode of an object should be always same. See the answer to learning more about things to remember while overriding hashCode() method in Java."
+      	"answer":"No, because hashcode of an object should be always same. See the answer to learning more about things to remember while overriding hashCode() method in Java.",
+      	"link" : "https://javarevisited.blogspot.com/2011/10/override-hashcode-in-java-example.html"
       },
       {
       	"question":"What is the difference between Comparator and Comparable in Java?",
-      	"answer":"The Comparable interface is used to define the  natural order of object while Comparator is used to define custom order. Comparable can be always one, but we can have multiple comparators to define customized order for objects."
+      	"answer":"The Comparable interface is used to define the  natural order of object while Comparator is used to define custom order. Comparable can be always one, but we can have multiple comparators to define customized order for objects.",
+      	"link" : "http://www.java67.com/2013/08/difference-between-comparator-and-comparable-in-java-interface-sorting.html"
       },
       {
       	"question":"Why you need to override hashcode, when you override equals in Java?",
-      	"answer":"Because equals have code contract mandates to override equals and hashcode together .since many container class like HashMap or HashSet depends on hashcode and equals contract."
+      	"answer":"Because equals have code contract mandates to override equals and hashcode together .since many container class like HashMap or HashSet depends on hashcode and equals contract.",
+      	"link" : "https://javarevisited.blogspot.com/2015/01/why-override-equals-hashcode-or-tostring-java.html"
       }
 ],
 "bestpracticeinterview":[
