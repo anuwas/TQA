@@ -17,7 +17,7 @@
         "link":"http://www.java67.com/2012/08/what-is-volatile-variable-in-java-when.html"
       },
       {
-        "question": "hich one would be easy to write? synchronization code for 10 threads or 2 threads?",
+        "question": "which one would be easy to write? synchronization code for 10 threads or 2 threads?",
         "answer": "In terms of writing code, both will be of same complexity because synchronization code is independent of a number of threads. Choice of synchronization though depends upon a number of threads because the number of thread present more contention, so you go for advanced synchronization technique e.g. lock stripping, which requires more complex code and expertise."
       },
       {
@@ -26,12 +26,22 @@
         "link" : "https://javarevisited.blogspot.com/2015/07/how-to-use-wait-notify-and-notifyall-in.html"
       },
       {
-        "question": "What is false sharing in the context of multi-threading? ",
-        "answer": "false sharing is one of the well-known performance issues on multi-core systems, where each process has its local cache. false sharing occurs when threads on different processor modify variables that reside on same cache line as shown in the following image:Java Interview questions for experienced programmersFalse sharing is very hard to detect because the thread may be accessing completely different global variables that happen to be relatively close together in memory. Like many concurrency issues, the primary way to avoid false sharing is careful code review and aligning your data structure with the size of a cache line."
+        "question": "The difference between sleep and wait in Java?",
+        "answer": "Though both are used to pause currently running thread, sleep() is actually meant for short pause because it doesn't release lock, while wait() is meant for conditional wait and that's why it release lock which can then be acquired by another thread to change the condition on which it is waiting.",
+        "link" : "http://www.java67.com/2012/08/what-are-difference-between-wait-and.html"
       },
       {
-        "question": "What is busy spin? Why should you use it?",
-        "answer": "Busy spin is one of the technique to wait for events without releasing CPU. It's often done to avoid losing data in CPU cached which is lost if the thread is paused and resumed in some other core. So, if you are working on low latency system where your order processing thread currently doesn't have any order, instead of sleeping or calling wait(), you can just loop and then again check the queue for new messages. It's only beneficial if you need to wait for a very small amount of time e.g. in micro seconds or nano seconds. LMAX Disrupter framework, a high-performance inter-thread messaging library has a BusySpinWaitStrategy which is based on this concept and uses a busy spin loop for EventProcessors waiting on the barrier."
+        "question": "What is an immutable object? How do you create an Immutable object in Java?",
+        "answer": "Immutable objects are those whose state cannot be changed once created. Any modification will result in a new object e.g. String, Integer, and other wrapper class. Please see the answer for step by step guide to creating Immutable class in Java.",
+        "link" : "https://javarevisited.blogspot.com/2013/03/how-to-create-immutable-class-object-java-example-tutorial.html"
+      },
+      {
+        "question": "Can we create an Immutable object, which contains a mutable object?",
+        "answer": "Yes, its possible to create an Immutable object which may contain a mutable object, you just need to be a little bit careful not to share the reference of the mutable component, instead, you should return a copy of it if you have to. Most common example is an Object which contain the reference of java.util.Date object."
+      },
+      {
+        "question": "What is false sharing in the context of multi-threading? ",
+        "answer": "false sharing is one of the well-known performance issues on multi-core systems, where each process has its local cache. false sharing occurs when threads on different processor modify variables that reside on same cache line as shown in the following image:Java Interview questions for experienced programmersFalse sharing is very hard to detect because the thread may be accessing completely different global variables that happen to be relatively close together in memory. Like many concurrency issues, the primary way to avoid false sharing is careful code review and aligning your data structure with the size of a cache line."
       },
       {
         "question": "How do you take thread dump in Java?",
@@ -58,18 +68,16 @@
         "link" : "https://javarevisited.blogspot.com/2012/12/how-to-create-thread-safe-singleton-in-java-example.html"
       },
       {
-        "question": "The difference between sleep and wait in Java?",
-        "answer": "Though both are used to pause currently running thread, sleep() is actually meant for short pause because it doesn't release lock, while wait() is meant for conditional wait and that's why it release lock which can then be acquired by another thread to change the condition on which it is waiting.",
-        "link" : "http://www.java67.com/2012/08/what-are-difference-between-wait-and.html"
+        "question": "What is busy spin? Why should you use it?",
+        "answer": "Busy spin is one of the technique to wait for events without releasing CPU. It's often done to avoid losing data in CPU cached which is lost if the thread is paused and resumed in some other core. So, if you are working on low latency system where your order processing thread currently doesn't have any order, instead of sleeping or calling wait(), you can just loop and then again check the queue for new messages. It's only beneficial if you need to wait for a very small amount of time e.g. in micro seconds or nano seconds. LMAX Disrupter framework, a high-performance inter-thread messaging library has a BusySpinWaitStrategy which is based on this concept and uses a busy spin loop for EventProcessors waiting on the barrier."
       },
       {
-        "question": "What is an immutable object? How do you create an Immutable object in Java?",
-        "answer": "Immutable objects are those whose state cannot be changed once created. Any modification will result in a new object e.g. String, Integer, and other wrapper class. Please see the answer for step by step guide to creating Immutable class in Java.",
-        "link" : "https://javarevisited.blogspot.com/2013/03/how-to-create-immutable-class-object-java-example-tutorial.html"
+      	"question" : "What’s the difference between Callable and Runnable?",
+      	"answer":"Both of these are interfaces used to carry out task to be executed by a thread. The main difference between the two interfaces is that Callable can return a value, while Runnable cannot. Another difference is that Callable can throw a checked exception, while Runnable cannot. Runnable has been around since Java 1.0, while Callable was introduced as part of Java 1.5."
       },
       {
-        "question": "Can we create an Immutable object, which contains a mutable object?",
-        "answer": "Yes, its possible to create an Immutable object which may contain a mutable object, you just need to be a little bit careful not to share the reference of the mutable component, instead, you should return a copy of it if you have to. Most common example is an Object which contain the reference of java.util.Date object."
+      	"question" : "What do the Thread.class methods run() and start() do?",
+      	"answer" : "Thread.run() will execute in the calling thread, i.e. a new thread is not created, the code is executed synchronously. Thread.start() will execute the same code, but in a new asynchronous thread."
       }
 ],
 "datatypesandbasic":[
@@ -146,6 +154,10 @@
         "question": "What is constructor chaining in Java?",
         "answer": "When you call one constructor from other than it's known as constructor chaining in Java. This happens when you have multiple, overloaded constructor in the class.",
         "link" : "http://www.java67.com/2012/12/how-constructor-chaining-works-in-java.html"
+      },
+      {
+      	"question" : "What are the default values of Java primitives?",
+      	"answer" : "byte – 0, int – 0, boolean – false, short – 0, long – 0L, float – 0.0f, double – 0.0d, char – \\u0000"
       }
 ],
 "jvmgarbagecollection":[
@@ -320,7 +332,8 @@
 "bestpracticeinterview":[
       {
       	"question":"What best practices you follow while writing multi-threaded code in Java?",
-      	"answer":"Here are couple of best practices which I follow while writing concurrent code in Java:\n a) Always name your thread, this will help in debugging. \n b) minimize the scope of synchronization, instead of making whole method synchronized, only critical section should be synchronized. \n c) prefer volatile over synchronized if you can can. \n e) use higher level concurrency utilities instead of waitn() and notify for inter thread communication e.g. BlockingQueue, CountDownLatch and Semeaphore. \n e) Prefer concurrent collection over synchronized collection in Java. They provide better scalability."
+      	"answer":"Here are couple of best practices which I follow while writing concurrent code in Java:\n a) Always name your thread, this will help in debugging. \n b) minimize the scope of synchronization, instead of making whole method synchronized, only critical section should be synchronized. \n c) prefer volatile over synchronized if you can can. \n e) use higher level concurrency utilities instead of waitn() and notify for inter thread communication e.g. BlockingQueue, CountDownLatch and Semeaphore. \n e) Prefer concurrent collection over synchronized collection in Java. They provide better scalability.",
+      	"link" : "https://javarevisited.blogspot.com/2015/05/top-10-java-multithreading-and.html"
       },
       {
       	"question":"Tell me few best practices you apply while using Collections in Java?",
@@ -328,7 +341,8 @@
       },
       {
       	"question":"Can you tell us at least 5 best practice you use while using threads in Java?", 
-      	"answer":"This is similar to the previous question and you can use the answer given there. Particularly with thread, you should:\n a) name your thread \n b) keep your task and thread separate, use Runnable or Callable with thread pool executor. \n c) use thread pool \n d) use volatile to indicate compiler about ordering, visibility, and atomicity. \n e) avoid thread local variable because incorrect use of ThreadLocal class in Java can create a memory leak. \n Look there are many best practices and I give extra points to the developer which bring something new, something even I don't know. I make sure to ask this question to Java developers of 8 to 10 years of experience just to gauge his hands on experience and knowledge."
+      	"answer":"This is similar to the previous question and you can use the answer given there. Particularly with thread, you should:\n a) name your thread \n b) keep your task and thread separate, use Runnable or Callable with thread pool executor. \n c) use thread pool \n d) use volatile to indicate compiler about ordering, visibility, and atomicity. \n e) avoid thread local variable because incorrect use of ThreadLocal class in Java can create a memory leak. \n Look there are many best practices and I give extra points to the developer which bring something new, something even I don't know. I make sure to ask this question to Java developers of 8 to 10 years of experience just to gauge his hands on experience and knowledge.",
+      	"link" : "http://www.java67.com/2014/01/10-points-about-thread-and-javalangthread-in-java.html"
       },
       {
       	"question":"Name 5 IO best practices?",
@@ -336,11 +350,13 @@
       },
       {
       	"question":"Name 5 JDBC best practices your follow?",
-      	"answer":"Another good Java best practices for experienced Java developer of 7 to 8 years experience. Why it's important? because they are the ones which set the trend in the code and educate junior developers. There are many best practices and you can name as per your confort and conviniece. Here are some of the more common ones: \n a) use batch statement for inserting and updating data. \n b) use PreparedStatement to avoid SQL exception and better performance. \n c) use database connection pool \n d) access resultset using column name instead of column indexes. \n e) Don't generate dynamic SQL by concatenating String with user input."
+      	"answer":"Another good Java best practices for experienced Java developer of 7 to 8 years experience. Why it's important? because they are the ones which set the trend in the code and educate junior developers. There are many best practices and you can name as per your confort and conviniece. Here are some of the more common ones: \n a) use batch statement for inserting and updating data. \n b) use PreparedStatement to avoid SQL exception and better performance. \n c) use database connection pool \n d) access resultset using column name instead of column indexes. \n e) Don't generate dynamic SQL by concatenating String with user input.",
+      	"link" : "https://javarevisited.blogspot.com/2012/08/top-10-jdbc-best-practices-for-java.html"
       },
       {
       	"question":"Name couple of method overloading best practices in Java?",
-      	"answer":"Here are some best practices you can follow while overloading a method in Java to avoid confusion with auto-boxing: \n a) Don't overload method where one accepts int and other accepts Integer. \n b) Don't overload method where number of argument is same and only order of argument is different. \n c) Use varargs after overloaded methods has more than 5 arguments."
+      	"answer":"Here are some best practices you can follow while overloading a method in Java to avoid confusion with auto-boxing: \n a) Don't overload method where one accepts int and other accepts Integer. \n b) Don't overload method where number of argument is same and only order of argument is different. \n c) Use varargs after overloaded methods has more than 5 arguments.",
+      	"link" : "https://javarevisited.blogspot.com/2013/01/java-best-practices-method-overloading-constructor.html"
       }
 ],
 "unittesting":[
@@ -350,7 +366,8 @@
       },
       {
       	"question":"How to do you test a method for an exception using JUnit?",
-      	"answer":""
+      	"answer":"",
+      	"link" : "https://javarevisited.blogspot.com/2013/04/JUnit-tutorial-example-test-exception-thrown-by-java-method.html"
       },
       {
       	"question":"Which unit testing libraries you have used for testing Java programs? ",
@@ -358,7 +375,8 @@
       },
       {
       	"question":"What is the difference between @Before and @BeforeClass annotation?",
-      	"answer":""
+      	"answer":"",
+      	"link" : "https://javarevisited.blogspot.com/2013/04/JUnit-tutorial-example-test-exception-thrown-by-java-method.html"
       }
 ],
 "datetime":[
@@ -478,6 +496,14 @@
       }
 ],
 "mislinious":[
+	 {
+      	"question":"Tell me 3 features introduced on JDK 1.7?",
+      	"answer":"This is one of the good questions I ask to check whether the candidate is aware of recent development in Java technology space or not. Even though JDK 7 was not a big bang release like JDK 5 or JDK 8, it still has a lot of good feature to count on e.g. try-with-resource statements, which free you from closing streams and resources when you are done with that, Java automatically closes that. Fork-Join pool to implement something like the Map-reduce pattern in Java. Allowing String variable and literal into switch statements. Diamond operator for improved type inference, no need to declare generic type on the right-hand side of variable declaration anymore, results in more readable and succinct code. Another worth noting feature introduced was improved exception handling e.g. allowing you to catch multiple exceptions in the same catch block."
+      },
+      {
+      	"question":"Tell me 5 features introduced in JDK 1.8?",
+      	"answer":"This is the follow-up question of the previous one. Java 8 is path breaking release in Java's history, here are the top 5 features from JDK 8 release \n Lambda expression, which allows you pass an anonymous function as object. \n Stream API, take advantage of multiple cores of modern CPU and allows you to write succinct code. \n Date and Time API, finally you have a solid and easy to use date and time library right into JDK \n Extension methods, now you can have static and default method into your interface \n Repeated annotation, allows you apply the same annotation multiple times on a type"
+      },
       {
       	"question":"The difference between nested static class and top level class?",
       	"answer":"One of the fundamental questions from Java basics. I ask this question only to junior Java developers of 1 to 2 years of experience as it's too easy for an experience Java programmers. The answer is simple, a public top level class must have the same name as the name of the source file, there is no such requirement for nested static class. A nested class is always inside a top level class and you need to use the name of the top-level class to refer nested static class e.g. HashMap.Entry is a nested static class, where HashMap is a top level class and Entry is nested static class."
@@ -501,15 +527,7 @@
       {
       	"question":"The difference between DOM and SAX parser in Java?",
       	"answer":"Another common Java question but from XML parsing topic. It's rather simple to answer and that's why many interviewers prefers to ask this question on the telephonic round. DOM parser loads the whole XML into memory to create a tree based DOM model which helps it quickly locate nodes and make a change in the structure of XML while SAX parser is an event based parser and doesn't load the whole XML into memory. Due to this reason DOM is faster than SAX but require more memory and not suitable to parse large XML files."
-      },
-      {
-      	"question":"Tell me 3 features introduced on JDK 1.7?",
-      	"answer":"This is one of the good questions I ask to check whether the candidate is aware of recent development in Java technology space or not. Even though JDK 7 was not a big bang release like JDK 5 or JDK 8, it still has a lot of good feature to count on e.g. try-with-resource statements, which free you from closing streams and resources when you are done with that, Java automatically closes that. Fork-Join pool to implement something like the Map-reduce pattern in Java. Allowing String variable and literal into switch statements. Diamond operator for improved type inference, no need to declare generic type on the right-hand side of variable declaration anymore, results in more readable and succinct code. Another worth noting feature introduced was improved exception handling e.g. allowing you to catch multiple exceptions in the same catch block."
-      },
-      {
-      	"question":"Tell me 5 features introduced in JDK 1.8?",
-      	"answer":"This is the follow-up question of the previous one. Java 8 is path breaking release in Java's history, here are the top 5 features from JDK 8 release \n Lambda expression, which allows you pass an anonymous function as object. \n Stream API, take advantage of multiple cores of modern CPU and allows you to write succinct code. \n Date and Time API, finally you have a solid and easy to use date and time library right into JDK \n Extension methods, now you can have static and default method into your interface \n Repeated annotation, allows you apply the same annotation multiple times on a type"
-      },
+      },      
       {
       	"question":"What is the difference between Maven and ANT in Java?",
       	"answer":"Another great question to check the all round knowledge of Java developers. It's easy to answer questions from core Java but when you ask about setting things up, building Java artifacts, many Java software engineer struggles. Coming back to the answer of this question, Though both are build tool and used to create Java application build, Maven is much more than that. It provides standard structure for Java project based upon \"convention over configuration\" concept and automatically manage dependencies (JAR files on which your application is dependent) for Java application. Please see the answer for more differences between Maven and ANT tool."

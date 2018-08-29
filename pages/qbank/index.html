@@ -2,6 +2,11 @@
 <style type="text/css">
   .angular-with-newlines {
     white-space: pre-wrap;
+
+}
+body{
+  font-family: 'Arial';
+  font-size: 12px;
 }
 </style>
     <section class="content-header">
@@ -25,7 +30,7 @@
           <div>
   <uib-accordion close-others="oneAtATime">
     <div uib-accordion-group class="panel-default" heading="{{group.question}}" ng-repeat="group in groups">
-      <div class="angular-with-newlines">
+      <div class="angular-with-newlines" >
         {{group.answer}}
     </div>
         <span ng-if="group.link">
